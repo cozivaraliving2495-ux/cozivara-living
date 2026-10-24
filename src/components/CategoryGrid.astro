@@ -1,0 +1,65 @@
+---
+// src/components/CategoryGrid.astro
+import { CATEGORIES } from '../data/categories';
+---
+
+<section id="categories" class="py-14 sm:py-20 bg-cozi-bg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header with Elegant Divider Rules -->
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="flex items-center justify-center gap-4 mb-3">
+        <span class="h-px w-12 sm:w-20 bg-cozi-border"></span>
+        <span class="text-xs font-semibold tracking-[0.25em] uppercase text-cozi-charcoal/70">
+          EXPLORE OUR CATEGORIES
+        </span>
+        <span class="h-px w-12 sm:w-20 bg-cozi-border"></span>
+      </div>
+      <h2 class="font-serif text-3xl sm:text-4xl text-cozi-charcoal font-bold tracking-tight">
+        Find Ideas for Every Corner of Your Home
+      </h2>
+    </div>
+
+    <!-- 5-Column Circular Category Items -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 justify-items-center">
+      {CATEGORIES.map((category) => (
+        <a 
+          href={`/category/${category.slug}`} 
+          class="group flex flex-col items-center text-center p-3 transition-transform duration-300 hover:-translate-y-1"
+        >
+          <!-- Circular Thumbnail with Elegant Ring -->
+          <div class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden p-1 border-2 border-transparent group-hover:border-cozi-olive/50 transition-all duration-300 shadow-soft">
+            <div class="w-full h-full rounded-full overflow-hidden bg-cozi-cream">
+              <img 
+                src={category.image} 
+                alt={category.name} 
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                width="200"
+                height="200"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Category Title -->
+          <h3 class="font-serif text-lg font-bold text-cozi-charcoal mt-4 mb-1 group-hover:text-cozi-olive transition-colors">
+            {category.name}
+          </h3>
+
+          <!-- Category Short Tagline -->
+          <p class="font-sans text-xs text-cozi-charcoal/70 max-w-[150px] leading-relaxed mb-3">
+            {category.tagline}
+          </p>
+
+          <!-- Circular Arrow Button -->
+          <span class="w-7 h-7 rounded-full bg-cozi-olive/20 group-hover:bg-cozi-olive flex items-center justify-center text-cozi-charcoal group-hover:text-white transition-all duration-300">
+            <svg class="w-3.5 h-3.5 stroke-current stroke-2 fill-none" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</section>

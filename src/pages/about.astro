@@ -1,0 +1,147 @@
+---
+// src/pages/about.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterBox from '../components/NewsletterBox.astro';
+---
+
+<BaseLayout
+  title="About Us & Editorial Standards | Cozivara Living"
+  description="Discover the story behind Cozivara Living, our editorial philosophy, core values, and dedicated interior styling team."
+>
+  <!-- About Hero -->
+  <section class="bg-[#F6F1EA] py-16 sm:py-20 border-b border-cozi-border/70">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-xs font-semibold tracking-[0.25em] uppercase text-cozi-charcoal/70 block mb-3">
+        OUR STORY & MISSION
+      </span>
+      <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-cozi-charcoal tracking-tight mb-6">
+        Make Room for Beautiful Living
+      </h1>
+      <p class="font-sans text-lg sm:text-xl text-cozi-charcoal/85 leading-relaxed max-w-2xl mx-auto font-normal">
+        We believe a peaceful, stylish home isn’t a privilege reserved for sprawling estates. It is an intentional sanctuary you create day by day.
+      </p>
+    </div>
+  </section>
+
+  <!-- Editorial Philosophy & Vision -->
+  <section class="py-16 sm:py-20 bg-cozi-bg">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16">
+        <div class="md:col-span-6 rounded-3xl overflow-hidden shadow-soft border border-cozi-border">
+          <img 
+            src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80" 
+            alt="Warm living room aesthetic" 
+            class="w-full h-auto object-cover"
+          />
+        </div>
+
+        <div class="md:col-span-6 space-y-5">
+          <span class="text-xs font-semibold tracking-[0.2em] uppercase text-cozi-olive">WHY WE EXIST</span>
+          <h2 class="font-serif text-3xl font-bold text-cozi-charcoal">
+            Real Homes. Realistic Budgets. Organic Warmth.
+          </h2>
+          <p class="text-sm sm:text-base text-cozi-charcoal/80 leading-relaxed">
+            Founded with a passion for warm organic neutrals and European minimalist simplicity, <strong>Cozivara Living</strong> was created to cut through fleeting micro-trends and overwhelming consumerism.
+          </p>
+          <p class="text-sm sm:text-base text-cozi-charcoal/80 leading-relaxed">
+            Whether you are outfitting a 450-sq-ft first rental, curating thrift-store stoneware, or streamlining a busy family pantry, our guides provide thoughtful blueprints that blend visual serenity with everyday practicality.
+          </p>
+        </div>
+      </div>
+
+      <!-- Core Values Grid -->
+      <div class="my-16">
+        <div class="text-center mb-12">
+          <span class="text-xs font-semibold tracking-[0.2em] uppercase text-cozi-charcoal/70">OUR PILLARS</span>
+          <h3 class="font-serif text-3xl font-bold text-cozi-charcoal mt-2">What Guides Every Article We Publish</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-3xl border border-cozi-border shadow-soft">
+            <div class="w-10 h-10 rounded-2xl bg-cozi-olive/15 text-cozi-olive flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-cozi-charcoal mb-2">Intentional Simplicity</h4>
+            <p class="text-sm text-cozi-charcoal/70 leading-relaxed">
+              We champion decluttering, warm neutral palettes, and timeless silhouettes that don't expire after one season.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-3xl border border-cozi-border shadow-soft">
+            <div class="w-10 h-10 rounded-2xl bg-cozi-olive/15 text-cozi-olive flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>
+              </svg>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-cozi-charcoal mb-2">Everyday Accessibility</h4>
+            <p class="text-sm text-cozi-charcoal/70 leading-relaxed">
+              Great taste does not require thousands of dollars. We love thrift hacks, DIY upgrades, and smart multi-purpose furniture.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-3xl border border-cozi-border shadow-soft">
+            <div class="w-10 h-10 rounded-2xl bg-cozi-olive/15 text-cozi-olive flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-cozi-charcoal mb-2">Editorial Integrity (E-E-A-T)</h4>
+            <p class="text-sm text-cozi-charcoal/70 leading-relaxed">
+              Every design recommendation is thoroughly researched, vetted, and tailored to provide real, helpful value to our readers.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Editorial Team Focus -->
+      <div class="my-16 bg-white rounded-3xl p-8 sm:p-12 border border-cozi-border shadow-soft">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-cozi-taupe/40 shadow-xs bg-cozi-bg shrink-0">
+            <img 
+              src="/images/logo.jpg" 
+              alt="Cozivara Editorial Team" 
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="space-y-3 text-center md:text-left">
+            <span class="text-xs font-semibold tracking-widest uppercase text-cozi-olive">THE EDITORIAL VOICE</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-cozi-charcoal">The Cozivara Editorial Team</h3>
+            <p class="text-sm sm:text-base text-cozi-charcoal/80 leading-relaxed max-w-2xl">
+              Our editorial team consists of interior stylists, small-space apartment dwellers, and organization enthusiasts. We test DIY ideas, evaluate furniture proportions, and curate Pinterest-friendly decor concepts that prioritize peace of mind and enduring aesthetic warmth.
+            </p>
+            <div class="pt-2">
+              <a 
+                href="/contact" 
+                class="inline-flex items-center gap-2 text-sm font-semibold text-cozi-olive hover:text-cozi-olive-dark underline underline-offset-4"
+              >
+                <span>Have an idea or feedback? Contact our editors →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Editorial & Affiliate Policy (AdSense Compliance) -->
+      <div id="editorial-policy" class="p-8 sm:p-10 rounded-3xl bg-[#F6F1EA] border border-cozi-border text-sm text-cozi-charcoal/80 space-y-4">
+        <h4 class="font-serif text-xl font-bold text-cozi-charcoal">Editorial Independence & Affiliate Disclosure</h4>
+        <p>
+          Cozivara Living participates in various affiliate marketing programs, including the Amazon Services LLC Associates Program. This means we may earn a modest commission on editorially chosen products purchased through our links to retailer sites, at zero extra cost to you.
+        </p>
+        <p>
+          Our editorial evaluations, recommendations, and reviews are never influenced by advertisers or sponsored placements. We only highlight products, decor items, and storage solutions that we have evaluated for their design aesthetics, durability, and practical everyday value.
+        </p>
+        <p>
+          For editorial questions, corrections, or partnership proposals, please contact us directly at <a href="mailto:cozivaraliving2495@gmail.com" class="text-cozi-olive font-medium underline">cozivaraliving2495@gmail.com</a>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <NewsletterBox />
+</BaseLayout>

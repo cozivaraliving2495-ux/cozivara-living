@@ -1,0 +1,173 @@
+---
+// src/components/SearchModal.astro
+import { POSTS } from '../data/posts';
+---
+
+<div 
+  id="search-modal" 
+  class="fixed inset-0 z-50 hidden bg-cozi-charcoal/60 backdrop-blur-xs flex items-start justify-center p-4 sm:p-6 md:p-20 overflow-y-auto"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Search articles"
+>
+  <div class="relative w-full max-w-2xl bg-white rounded-3xl shadow-hover border border-cozi-border overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+    
+    <!-- Search Input Header -->
+    <div class="flex items-center px-6 py-4 border-b border-cozi-border/70 bg-cozi-bg">
+      <svg class="w-5 h-5 text-cozi-olive mr-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.3-4.3"></path>
+      </svg>
+      <input 
+        id="search-input"
+        type="search" 
+        placeholder="Search small spaces, budget decor, organization..." 
+        class="w-full bg-transparent text-base text-cozi-charcoal placeholder-cozi-charcoal/50 focus:outline-hidden"
+        autocomplete="off"
+      />
+      <button 
+        id="close-search-btn"
+        type="button" 
+        class="ml-3 p-1.5 rounded-full hover:bg-cozi-border text-cozi-charcoal/60 hover:text-cozi-charcoal transition-colors"
+        aria-label="Close search"
+      >
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Quick Tags -->
+    <div class="px-6 py-3 bg-[#F9F6F0] border-b border-cozi-border/50 flex items-center gap-2 overflow-x-auto text-xs">
+      <span class="text-cozi-charcoal/60 whitespace-nowrap">Suggested:</span>
+      <button class="quick-tag px-2.5 py-1 rounded-full bg-white border border-cozi-border hover:border-cozi-olive text-cozi-charcoal transition-colors">Small Spaces</button>
+      <button class="quick-tag px-2.5 py-1 rounded-full bg-white border border-cozi-border hover:border-cozi-olive text-cozi-charcoal transition-colors">Bedroom</button>
+      <button class="quick-tag px-2.5 py-1 rounded-full bg-white border border-cozi-border hover:border-cozi-olive text-cozi-charcoal transition-colors">Budget Decor</button>
+      <button class="quick-tag px-2.5 py-1 rounded-full bg-white border border-cozi-border hover:border-cozi-olive text-cozi-charcoal transition-colors">Organization</button>
+    </div>
+
+    <!-- Search Results List -->
+    <div id="search-results" class="max-h-96 overflow-y-auto p-4 sm:p-6 divide-y divide-cozi-border/40">
+      {POSTS.map((post) => (
+        <a 
+          href={`/blog/${post.slug}`} 
+          class="search-item flex items-center gap-4 py-3.5 px-3 rounded-xl hover:bg-cozi-cream/50 transition-colors group"
+          data-title={post.title.toLowerCase()}
+          data-category={post.category.toLowerCase()}
+          data-excerpt={post.excerpt.toLowerCase()}
+        >
+          <img 
+            src={post.featuredImage} 
+            alt={post.title} 
+            class="w-16 h-14 object-cover rounded-lg shrink-0 border border-cozi-border"
+            loading="lazy"
+          />
+          <div class="flex-grow min-w-0">
+            <span class="text-[10px] uppercase font-bold tracking-wider text-cozi-olive">
+              {post.category}
+            </span>
+            <h4 class="font-serif text-sm font-semibold text-cozi-charcoal group-hover:text-cozi-olive truncate">
+              {post.title}
+            </h4>
+            <p class="text-xs text-cozi-charcoal/60 truncate">
+              {post.excerpt}
+            </p>
+          </div>
+          <svg class="w-4 h-4 text-cozi-charcoal/40 group-hover:text-cozi-olive group-hover:translate-x-1 transition-all shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      ))}
+      <div id="no-results" class="hidden py-8 text-center text-sm text-cozi-charcoal/60">
+        No articles found matching your query.
+      </div>
+    </div>
+
+    <!-- Footer shortcut helper -->
+    <div class="px-6 py-2.5 bg-cozi-bg border-t border-cozi-border/60 flex items-center justify-between text-[11px] text-cozi-charcoal/60">
+      <span>Press <kbd class="px-1.5 py-0.5 rounded bg-white border border-cozi-border font-mono text-[10px]">ESC</kbd> to exit</span>
+      <span>Cozivara Search</span>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('search-modal');
+  const input = document.getElementById('search-input') as HTMLInputElement;
+  const closeBtn = document.getElementById('close-search-btn');
+  const triggers = [
+    document.getElementById('search-trigger-announcement'),
+    document.getElementById('search-trigger-nav'),
+    document.getElementById('search-trigger-mobile'),
+  ];
+  const items = document.querySelectorAll('.search-item');
+  const noResults = document.getElementById('no-results');
+  const quickTags = document.querySelectorAll('.quick-tag');
+
+  function openSearch() {
+    if (!modal) return;
+    modal.classList.remove('hidden');
+    setTimeout(() => input?.focus(), 50);
+  }
+
+  function closeSearch() {
+    if (!modal) return;
+    modal.classList.add('hidden');
+  }
+
+  triggers.forEach(t => t?.addEventListener('click', openSearch));
+  closeBtn?.addEventListener('click', closeSearch);
+
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) closeSearch();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal?.classList.contains('hidden')) {
+      closeSearch();
+    }
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      openSearch();
+    }
+  });
+
+  function performSearch(query: string) {
+    const q = query.trim().toLowerCase();
+    let matchCount = 0;
+
+    items.forEach((item) => {
+      const el = item as HTMLElement;
+      const title = el.getAttribute('data-title') || '';
+      const cat = el.getAttribute('data-category') || '';
+      const exc = el.getAttribute('data-excerpt') || '';
+
+      if (!q || title.includes(q) || cat.includes(q) || exc.includes(q)) {
+        el.style.display = 'flex';
+        matchCount++;
+      } else {
+        el.style.display = 'none';
+      }
+    });
+
+    if (noResults) {
+      noResults.classList.toggle('hidden', matchCount > 0);
+    }
+  }
+
+  input?.addEventListener('input', (e) => {
+    performSearch((e.target as HTMLInputElement).value);
+  });
+
+  quickTags.forEach((tag) => {
+    tag.addEventListener('click', () => {
+      const text = tag.textContent || '';
+      if (input) {
+        input.value = text;
+        performSearch(text);
+      }
+    });
+  });
+</script>

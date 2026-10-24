@@ -1,0 +1,116 @@
+---
+// src/pages/blog/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import NewsletterBox from '../../components/NewsletterBox.astro';
+import { POSTS } from '../../data/posts';
+import { CATEGORIES } from '../../data/categories';
+
+const featuredPost = POSTS[0];
+const remainingPosts = POSTS.slice(1);
+---
+
+<BaseLayout 
+  title="All Home Decor & Lifestyle Articles | Cozivara Living"
+  description="Browse our complete collection of interior decor guides, small space hacks, budget design tips, and home organization ideas."
+>
+  <!-- Header Banner -->
+  <section class="bg-[#F6F1EA] py-14 border-b border-cozi-border/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <span class="text-xs font-semibold tracking-[0.25em] uppercase text-cozi-charcoal/70 block mb-3">
+        THE COZIVARA JOURNAL
+      </span>
+      <h1 class="font-serif text-4xl sm:text-5xl font-bold text-cozi-charcoal tracking-tight mb-4">
+        Ideas, Inspiration & Styling Guides
+      </h1>
+      <p class="text-sm sm:text-base text-cozi-charcoal/80 leading-relaxed max-w-xl mx-auto">
+        Practical living wisdom for spaces of every shape, size, and budget. Curated with love by our interior stylists.
+      </p>
+
+      <!-- Category Filter Pills -->
+      <div class="flex items-center justify-center gap-2 sm:gap-3 flex-wrap mt-8">
+        <a 
+          href="/blog" 
+          class="px-4 py-2 rounded-full text-xs font-semibold bg-cozi-olive text-white shadow-xs transition-colors"
+        >
+          All Stories
+        </a>
+        {CATEGORIES.map((cat) => (
+          <a 
+            href={`/category/${cat.slug}`}
+            class="px-4 py-2 rounded-full text-xs font-medium bg-white hover:bg-cozi-cream text-cozi-charcoal border border-cozi-border shadow-xs transition-colors"
+          >
+            {cat.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Ad Slot -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <AdSlot position="top" preview={true} />
+  </div>
+
+  <!-- Featured Lead Story -->
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="rounded-3xl bg-white border border-cozi-border shadow-soft overflow-hidden grid grid-cols-1 lg:grid-cols-12 group">
+      
+      <div class="lg:col-span-7 pin-container relative overflow-hidden bg-cozi-cream min-h-[340px]">
+        <a href={`/blog/${featuredPost.slug}`} class="block h-full">
+          <img 
+            src={featuredPost.featuredImage} 
+            alt={featuredPost.title} 
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="eager"
+          />
+        </a>
+      </div>
+
+      <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-center">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="px-2.5 py-1 rounded-md text-[11px] font-semibold tracking-wider uppercase bg-[#EEF2EC] text-[#485540]">
+            FEATURED STORY
+          </span>
+          <span class="text-xs text-cozi-charcoal/60">{featuredPost.readTime}</span>
+        </div>
+
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-cozi-charcoal mb-4 group-hover:text-cozi-olive transition-colors leading-tight">
+          <a href={`/blog/${featuredPost.slug}`}>
+            {featuredPost.title}
+          </a>
+        </h2>
+
+        <p class="text-sm text-cozi-charcoal/75 leading-relaxed mb-6">
+          {featuredPost.excerpt}
+        </p>
+
+        <div class="flex items-center justify-between pt-4 border-t border-cozi-border/70 text-xs text-cozi-charcoal/70">
+          <span>By {featuredPost.author.name}</span>
+          <span>{featuredPost.publishDate}</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Articles Grid -->
+  <section class="py-12 bg-cozi-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="font-serif text-2xl font-bold text-cozi-charcoal">All Articles</h2>
+        <span class="text-xs text-cozi-charcoal/60 font-medium">Showing {POSTS.length} curated guides</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {remainingPosts.map((post) => (
+          <PostCard post={post} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <NewsletterBox />
+</BaseLayout>

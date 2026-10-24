@@ -1,0 +1,371 @@
+---
+// src/layouts/BlogPostLayout.astro
+import BaseLayout from './BaseLayout.astro';
+import type { BlogPost } from '../data/posts';
+import AdSlot from '../components/AdSlot.astro';
+import PinterestSaveButton from '../components/PinterestSaveButton.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import SocialShare from '../components/SocialShare.astro';
+import PostCard from '../components/PostCard.astro';
+import NewsletterBox from '../components/NewsletterBox.astro';
+import { POSTS } from '../data/posts';
+
+interface Props {
+  post: BlogPost;
+}
+
+const { post } = Astro.props;
+
+const siteUrl = 'https://cozivaraliving.com';
+const postUrl = `${siteUrl}/blog/${post.slug}`;
+const shareImage = post.pinImage || post.featuredImage;
+
+// Related posts from same category or newest
+const relatedPosts = POSTS.filter(p => p.slug !== post.slug && (p.categorySlug === post.categorySlug || true)).slice(0, 3);
+
+// Schema.org BlogPosting
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': postUrl,
+  },
+  headline: post.title,
+  description: post.excerpt,
+  image: [post.featuredImage, shareImage],
+  datePublished: new Date(post.publishDate).toISOString(),
+  dateModified: new Date().toISOString(),
+  author: {
+    '@type': 'Person',
+    name: post.author.name,
+    jobTitle: post.author.role,
+    image: post.author.avatar,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Cozivara Living',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteUrl}/images/logo.jpg`,
+    },
+  },
+};
+
+// BreadcrumbList Schema
+const breadcrumbsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: post.category,
+      item: `${siteUrl}/category/${post.categorySlug}`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: post.title,
+      item: postUrl,
+    },
+  ],
+};
+---
+
+<BaseLayout 
+  title={`${post.title} | Cozivara Living`}
+  description={post.excerpt}
+  image={shareImage}
+  type="article"
+  publishDate={new Date(post.publishDate).toISOString()}
+  authorName={post.author.name}
+  canonicalUrl={postUrl}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbsSchema)} />
+  </Fragment>
+
+  <!-- Top Ad Slot (Leaderboard Banner) -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <AdSlot position="top" preview={true} />
+  </div>
+
+  <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+    
+    <!-- Breadcrumbs Navigation -->
+    <nav class="flex items-center text-xs text-cozi-charcoal/60 mb-6 flex-wrap gap-2" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-cozi-olive transition-colors">Home</a>
+      <span>/</span>
+      <a href={`/category/${post.categorySlug}`} class="hover:text-cozi-olive transition-colors">{post.category}</a>
+      <span>/</span>
+      <span class="text-cozi-charcoal truncate max-w-xs sm:max-w-md">{post.title}</span>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="max-w-4xl mx-auto text-center mb-10">
+      
+      <!-- Category Badge -->
+      <a 
+        href={`/category/${post.categorySlug}`}
+        class={`inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase ${post.categoryBadgeBg} ${post.categoryBadgeText} mb-4 hover:opacity-85 transition-opacity`}
+      >
+        {post.category}
+      </a>
+
+      <!-- High-Impact Title -->
+      <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-cozi-charcoal tracking-tight leading-[1.15] mb-6">
+        {post.title}
+      </h1>
+
+      <!-- Article Excerpt -->
+      <p class="font-sans text-base sm:text-lg text-cozi-charcoal/80 leading-relaxed max-w-2xl mx-auto mb-8">
+        {post.excerpt}
+      </p>
+
+      <!-- Author Bio & Post Metadata -->
+      <div class="flex items-center justify-center gap-4 sm:gap-6 flex-wrap pb-6 border-b border-cozi-border/70 text-xs text-cozi-charcoal/70">
+        <div class="flex items-center gap-3">
+          <img 
+            src={post.author.avatar} 
+            alt={post.author.name} 
+            class="w-10 h-10 rounded-full object-cover border border-cozi-taupe/40"
+            width="40"
+            height="40"
+          />
+          <div class="text-left">
+            <p class="font-semibold text-cozi-charcoal text-sm">{post.author.name}</p>
+            <p class="text-[11px] text-cozi-charcoal/60">{post.author.role}</p>
+          </div>
+        </div>
+
+        <span class="hidden sm:inline text-cozi-border">•</span>
+
+        <div class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 stroke-current stroke-2 fill-none" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Published on {post.publishDate}</span>
+        </div>
+
+        <span class="hidden sm:inline text-cozi-border">•</span>
+
+        <div class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 stroke-current stroke-2 fill-none" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span>{post.readTime}</span>
+        </div>
+      </div>
+
+      <!-- Social Share Header Row -->
+      <div class="mt-6 flex items-center justify-center">
+        <SocialShare url={postUrl} title={post.title} media={shareImage} />
+      </div>
+
+    </header>
+
+    <!-- Main Featured Image with Pinterest Save button -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <div class="pin-container relative rounded-3xl overflow-hidden shadow-soft border border-cozi-border bg-cozi-cream">
+        <img 
+          src={post.featuredImage} 
+          alt={post.imageAlt || post.title} 
+          class="w-full h-auto aspect-[16/9] object-cover"
+          width="1200"
+          height="675"
+          loading="eager"
+          fetchpriority="high"
+        />
+        
+        <PinterestSaveButton 
+          url={postUrl}
+          media={shareImage}
+          description={post.pinterestDescription || post.title}
+        />
+      </div>
+      <p class="text-center text-xs text-cozi-charcoal/50 italic mt-2.5">
+        Photo curation & styling by Cozivara Living Editorial Team. Pin this idea to your board.
+      </p>
+    </div>
+
+    <!-- 2-Column Grid: Article Content + Sticky Ad Sidebar -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-6xl mx-auto">
+      
+      <!-- Main Content Column (8 cols) -->
+      <div class="lg:col-span-8">
+        
+        <!-- Table of Contents Component -->
+        <TableOfContents headings={post.headings} />
+
+        <!-- Rich Article HTML Content -->
+        <div class="prose-cozi">
+          <Fragment set:html={post.contentHtml} />
+        </div>
+
+        <!-- In-Article AdSlot -->
+        <div class="my-8">
+          <AdSlot position="in-article" preview={true} />
+        </div>
+
+        <!-- Dedicated Pinterest Pin Showcase Card (2:3 aspect ratio) -->
+        {post.pinImage && (
+          <div class="my-10 p-6 sm:p-8 rounded-3xl bg-white border border-cozi-border shadow-soft flex flex-col sm:flex-row gap-6 items-center">
+            <div class="pin-container w-44 sm:w-48 shrink-0 rounded-2xl overflow-hidden shadow-md">
+              <img 
+                src={post.pinImage} 
+                alt={`Pinterest Graphic: ${post.title}`}
+                class="w-full aspect-[2/3] object-cover"
+                loading="lazy"
+              />
+              <PinterestSaveButton 
+                url={postUrl}
+                media={post.pinImage}
+                description={post.pinterestDescription}
+              />
+            </div>
+            <div>
+              <span class="inline-block px-2.5 py-0.5 rounded-full bg-[#E60023]/10 text-[#E60023] font-semibold text-xs tracking-wider uppercase mb-2">
+                Save This Pin
+              </span>
+              <h4 class="font-serif text-xl font-bold text-cozi-charcoal mb-2">
+                Love this design inspiration?
+              </h4>
+              <p class="text-sm text-cozi-charcoal/75 mb-4 leading-relaxed">
+                Save this graphic to your home decor or apartment styling board on Pinterest so you can easily reference it when redecorating!
+              </p>
+              <a 
+                href={`https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(postUrl)}&media=${encodeURIComponent(post.pinImage)}&description=${encodeURIComponent(post.pinterestDescription)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#E60023] hover:bg-[#ad081b] text-white text-xs font-semibold shadow-xs transition-colors"
+              >
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.69 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026l.032-.026z"/>
+                </svg>
+                <span>Save to Pinterest Board</span>
+              </a>
+            </div>
+          </div>
+        )}
+
+        <!-- Bottom Social Share -->
+        <div class="py-6 border-y border-cozi-border/70 flex items-center justify-between flex-wrap gap-4 my-8">
+          <SocialShare url={postUrl} title={post.title} media={shareImage} />
+          <a href="#top" class="text-xs text-cozi-charcoal/60 hover:text-cozi-olive flex items-center gap-1 transition-colors">
+            <span>Back to top</span>
+            <svg class="w-3.5 h-3.5 stroke-current stroke-2 fill-none" viewBox="0 0 24 24">
+              <path d="M18 15l-6-6-6 6"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- E-E-A-T Author Box -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-white border border-cozi-border shadow-soft flex items-start gap-5 my-8">
+          <img 
+            src={post.author.avatar} 
+            alt={post.author.name} 
+            class="w-16 h-16 rounded-full object-cover border border-cozi-taupe/40 shrink-0"
+            width="64"
+            height="64"
+          />
+          <div>
+            <span class="text-[10px] font-semibold tracking-widest uppercase text-cozi-olive">Written By</span>
+            <h4 class="font-serif text-lg font-bold text-cozi-charcoal">{post.author.name}</h4>
+            <p class="text-xs text-cozi-taupe font-medium mb-2">{post.author.role}</p>
+            <p class="text-sm text-cozi-charcoal/80 leading-relaxed">
+              {post.author.bio}
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sticky Sidebar (4 cols) for AdSense & Newsletter -->
+      <aside class="lg:col-span-4 space-y-8">
+        
+        <!-- Sidebar Sticky AdSlot -->
+        <div class="sticky top-28 space-y-8">
+          
+          <!-- AdSlot Position Sidebar -->
+          <AdSlot position="sidebar" preview={true} />
+
+          <!-- Mini Newsletter in Sidebar -->
+          <div class="rounded-2xl bg-cozi-cream/70 border border-cozi-border p-6 shadow-soft">
+            <span class="text-[10px] font-semibold tracking-widest uppercase text-cozi-olive block mb-1">
+              Join 45,000+ Readers
+            </span>
+            <h4 class="font-serif text-lg font-bold text-cozi-charcoal mb-2">
+              Weekly Home Inspo
+            </h4>
+            <p class="text-xs text-cozi-charcoal/70 mb-4 leading-relaxed">
+              Receive our top interior styling guides, DIY tips, and seasonal checklists every Sunday morning.
+            </p>
+            <form class="space-y-2">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-cozi-border text-xs text-cozi-charcoal focus:outline-hidden focus:border-cozi-olive" 
+                required 
+              />
+              <button 
+                type="submit" 
+                class="w-full py-2.5 rounded-xl bg-cozi-olive hover:bg-cozi-olive-dark text-white font-medium text-xs transition-colors shadow-xs"
+              >
+                Subscribe Free
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+  </article>
+
+  <!-- Bottom AdSlot (Leaderboard) -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <AdSlot position="bottom" preview={true} />
+  </div>
+
+  <!-- Related Posts Section -->
+  <section class="py-14 sm:py-16 bg-[#F8F5EE] border-t border-cozi-border/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <span class="text-xs font-semibold tracking-[0.25em] uppercase text-cozi-charcoal/70">CONTINUE READING</span>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-cozi-charcoal">Related Decor Guides</h2>
+        </div>
+        <a href="/blog" class="text-sm font-semibold text-cozi-olive hover:underline flex items-center gap-1">
+          <span>View All</span>
+          <svg class="w-4 h-4 stroke-current stroke-2 fill-none" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        {relatedPosts.map((rPost) => (
+          <PostCard post={rPost} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <NewsletterBox />
+
+</BaseLayout>

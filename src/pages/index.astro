@@ -1,0 +1,64 @@
+---
+// src/pages/index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import CategoryGrid from '../components/CategoryGrid.astro';
+import PostCard from '../components/PostCard.astro';
+import NewsletterBox from '../components/NewsletterBox.astro';
+import { POSTS } from '../data/posts';
+
+// Take the first 4 posts matching the mockup cards
+const latestPosts = POSTS.slice(0, 4);
+---
+
+<BaseLayout
+  title="Cozivara Living | Make Room for Beautiful Living"
+  description="Where Style Meets Serenity. Curated Pieces. Timeless Elegance. Explore practical home decor tips, small space styling, budget ideas, and tranquil organization guides."
+>
+
+  <!-- Hero Section -->
+  <HeroSection />
+
+  <!-- Circular Category Grid Section -->
+  <CategoryGrid />
+
+  <!-- Latest Articles Section (Matching Mockup 4-Column Layout) -->
+  <section class="py-14 sm:py-20 bg-cozi-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header with "View all articles ->" link -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-4 border-b border-cozi-border/60 gap-4">
+        <div>
+          <span class="text-xs font-semibold tracking-[0.25em] uppercase text-cozi-charcoal/70 block mb-2">
+            LATEST ARTICLES
+          </span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cozi-charcoal tracking-tight">
+            Fresh Ideas for a More Beautiful Home
+          </h2>
+        </div>
+        
+        <a 
+          href="/blog" 
+          class="inline-flex items-center gap-1.5 text-sm font-semibold text-cozi-charcoal hover:text-cozi-olive transition-colors group shrink-0"
+        >
+          <span>View all articles</span>
+          <svg class="w-4 h-4 stroke-current stroke-2 fill-none transform group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- 4-Column Responsive Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+        {latestPosts.map((post) => (
+          <PostCard post={post} />
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Newsletter Subscription Box -->
+  <NewsletterBox />
+
+</BaseLayout>

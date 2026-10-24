@@ -1,0 +1,114 @@
+---
+// src/pages/category/[category].astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import NewsletterBox from '../../components/NewsletterBox.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import { CATEGORIES } from '../../data/categories';
+import type { Category } from '../../data/categories';
+import { POSTS } from '../../data/posts';
+import type { BlogPost } from '../../data/posts';
+
+export async function getStaticPaths() {
+  return CATEGORIES.map((category) => {
+    const filteredPosts = POSTS.filter(post => post.categorySlug === category.slug);
+    return {
+      params: { category: category.slug },
+      props: { category, posts: filteredPosts },
+    };
+  });
+}
+
+interface Props {
+  category: Category;
+  posts: BlogPost[];
+}
+
+const { category, posts } = Astro.props;
+---
+
+<BaseLayout 
+  title={`${category.name} Decor Ideas & Guides | Cozivara Living`}
+  description={category.description}
+  image={category.image}
+>
+  <!-- Category Header Hero -->
+  <section class="bg-[#F5F0E9] border-b border-cozi-border/70 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex items-center text-xs text-cozi-charcoal/60 mb-6 gap-2" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-cozi-olive transition-colors">Home</a>
+        <span>/</span>
+        <a href="/blog" class="hover:text-cozi-olive transition-colors">Categories</a>
+        <span>/</span>
+        <span class="text-cozi-charcoal font-semibold">{category.name}</span>
+      </nav>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-8">
+          <span class={`inline-block px-3 py-1 rounded-md text-xs font-semibold tracking-wider uppercase ${category.badgeBg} ${category.badgeText} mb-3`}>
+            CATEGORY ARCHIVE
+          </span>
+          <h1 class="font-serif text-4xl sm:text-5xl font-bold text-cozi-charcoal tracking-tight mb-4">
+            {category.name}
+          </h1>
+          <p class="text-base text-cozi-charcoal/80 leading-relaxed max-w-2xl">
+            {category.description}
+          </p>
+        </div>
+
+        <div class="md:col-span-4 flex justify-start md:justify-end">
+          <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-soft">
+            <img 
+              src={category.image} 
+              alt={category.name}
+              class="w-full h-full object-cover" 
+            />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Top Ad Slot -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <AdSlot position="top" preview={true} />
+  </div>
+
+  <!-- Category Articles Grid -->
+  <section class="py-14 sm:py-20 bg-cozi-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex items-center justify-between mb-8 pb-3 border-b border-cozi-border/60">
+        <h2 class="font-serif text-2xl font-bold text-cozi-charcoal">
+          Latest in {category.name}
+        </h2>
+        <span class="text-xs text-cozi-charcoal/60">
+          {posts.length} {posts.length === 1 ? 'Article' : 'Articles'}
+        </span>
+      </div>
+
+      {posts.length > 0 ? (
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post) => (
+            <PostCard post={post} />
+          ))}
+        </div>
+      ) : (
+        <div class="py-16 text-center bg-white rounded-3xl border border-cozi-border p-8">
+          <p class="font-serif text-xl font-semibold text-cozi-charcoal mb-2">More guides coming soon!</p>
+          <p class="text-sm text-cozi-charcoal/70 mb-6">Our editors are putting the finishing touches on new {category.name} ideas.</p>
+          <a href="/blog" class="inline-flex px-6 py-2.5 rounded-full bg-cozi-olive text-white text-xs font-semibold">
+            Explore All Stories
+          </a>
+        </div>
+      )}
+
+    </div>
+  </section>
+
+  <!-- Newsletter Box -->
+  <NewsletterBox />
+</BaseLayout>

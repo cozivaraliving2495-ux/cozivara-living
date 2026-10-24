@@ -1,0 +1,62 @@
+---
+// src/components/HeroSection.astro
+---
+
+<section class="relative w-full overflow-hidden bg-cozi-bg pt-2 pb-12 sm:pb-16 lg:pb-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero Card Container -->
+    <div class="relative rounded-3xl overflow-hidden shadow-soft border border-cozi-border/70 min-h-[500px] md:min-h-[580px] lg:min-h-[640px] flex items-center">
+      
+      <!-- Background Hero Image with Warm Natural Grading -->
+      <img 
+        src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2000&q=85" 
+        alt="Serene neutral living room with cozy linen sofa and organic decor"
+        class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[1.01]"
+        width="1920"
+        height="1080"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+
+      <!-- Natural, Soft Scrim Gradient (Gently feathered for maximum photographic clarity and text legibility) -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#FAF7F2]/80 via-[#FAF7F2]/35 to-transparent w-full sm:w-2/3 md:w-3/5 lg:w-1/2 pointer-events-none"></div>
+      
+      <!-- Hero Content Overlay -->
+      <div class="relative z-10 max-w-xl px-6 sm:px-10 lg:px-14 py-12 md:py-16">
+        
+        <!-- Category Eyebrow Tag -->
+        <span class="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-cozi-charcoal/80 mb-3 sm:mb-4 bg-[#FAF7F2]/70 backdrop-blur-xs px-3 py-1 rounded-full border border-cozi-border/60">
+          HOME DECOR &nbsp;/&nbsp; LIFESTYLE &nbsp;/&nbsp; INSPIRATION
+        </span>
+
+        <!-- Primary Hero Title -->
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-cozi-charcoal leading-[1.12] tracking-tight mb-4 sm:mb-5 drop-shadow-xs">
+          Where Style <br class="hidden sm:inline" />Meets Serenity.
+        </h1>
+
+        <!-- Hero Subheadline -->
+        <p class="font-sans text-base sm:text-lg text-cozi-charcoal/90 font-normal leading-relaxed mb-8 max-w-md drop-shadow-xs">
+          Curated Pieces. Timeless Elegance.
+        </p>
+
+        <!-- CTA Action Button (Only the primary 'Explore Ideas ->' button) -->
+        <div class="flex items-center">
+          <a 
+            href="#categories" 
+            class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-cozi-olive text-white font-medium text-sm sm:text-base shadow-sm hover:bg-cozi-olive-dark hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 group"
+          >
+            <span>Explore Ideas</span>
+            <svg class="w-4 h-4 stroke-current stroke-2 fill-none transform group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

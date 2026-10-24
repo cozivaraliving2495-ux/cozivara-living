@@ -1,0 +1,98 @@
+---
+// src/components/SocialShare.astro
+interface Props {
+  url: string;
+  title: string;
+  media?: string;
+}
+
+const { url, title, media = '' } = Astro.props;
+
+const encodedUrl = encodeURIComponent(url);
+const encodedTitle = encodeURIComponent(title);
+const encodedMedia = encodeURIComponent(media);
+
+const pinHref = `https://www.pinterest.com/pin/create/button/?url=${encodedUrl}&media=${encodedMedia}&description=${encodedTitle}`;
+const fbHref = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+const xHref = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
+---
+
+<div class="flex items-center gap-2 flex-wrap">
+  <span class="text-xs font-semibold uppercase tracking-wider text-cozi-charcoal/60 mr-1">Share:</span>
+
+  <!-- Pinterest Share Button -->
+  <a 
+    href={pinHref}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#E60023] hover:bg-[#ad081b] text-white text-xs font-medium shadow-xs transition-colors"
+    aria-label="Pin on Pinterest"
+  >
+    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+      <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.69 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026l.032-.026z"/>
+    </svg>
+    <span>Pin</span>
+  </a>
+
+  <!-- Facebook Share -->
+  <a 
+    href={fbHref}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#1877F2] hover:bg-[#0f62cc] text-white text-xs font-medium shadow-xs transition-colors"
+    aria-label="Share on Facebook"
+  >
+    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+      <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.688 5H18V0h-3.808C10.597 0 9 1.583 9 4.615V8z"/>
+    </svg>
+    <span>Share</span>
+  </a>
+
+  <!-- Twitter / X Share -->
+  <a 
+    href={xHref}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black hover:bg-neutral-800 text-white text-xs font-medium shadow-xs transition-colors"
+    aria-label="Share on X"
+  >
+    <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </svg>
+    <span>Post</span>
+  </a>
+
+  <!-- Copy Link -->
+  <button 
+    id="copy-link-btn"
+    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-cozi-cream text-cozi-charcoal border border-cozi-border text-xs font-medium shadow-xs transition-colors cursor-pointer"
+    data-url={url}
+    aria-label="Copy link to clipboard"
+  >
+    <svg class="w-3.5 h-3.5 stroke-current stroke-2 fill-none" viewBox="0 0 24 24">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+    </svg>
+    <span id="copy-btn-text">Copy</span>
+  </button>
+</div>
+
+<script>
+  const copyBtn = document.getElementById('copy-link-btn');
+  const copyText = document.getElementById('copy-btn-text');
+
+  if (copyBtn && copyText) {
+    copyBtn.addEventListener('click', async () => {
+      const url = copyBtn.getAttribute('data-url') || window.location.href;
+      try {
+        await navigator.clipboard.writeText(url);
+        copyText.textContent = 'Copied!';
+        setTimeout(() => {
+          copyText.textContent = 'Copy';
+        }, 2000);
+      } catch (err) {
+        // Fallback
+      }
+    });
+  }
+</script>
