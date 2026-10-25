@@ -1,0 +1,15 @@
+---
+// src/pages/design-my-room.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { RoomDesigner } from '../components/room-designer/RoomDesigner';
+
+const title = '3D Design My Room Planner | Cozivara Living';
+const description = 'Arrange furniture in an interactive 3D room planner. Adjust room dimensions, wall colors, flooring, and furniture placement.';
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="py-4">
+    <!-- Client-only interactive 3D application -->
+    <RoomDesigner client:only="react" />
+  </div>
+</BaseLayout>

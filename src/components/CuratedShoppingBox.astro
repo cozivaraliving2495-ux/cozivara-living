@@ -1,0 +1,136 @@
+---
+// src/components/CuratedShoppingBox.astro
+interface Props {
+  categorySlug?: string;
+  postSlug?: string;
+}
+
+const { categorySlug = 'small-spaces', postSlug = '' } = Astro.props;
+
+// General retailer search links for similar items; no individual listing or price is asserted.
+const SHOPPING_GUIDES: Record<string, Array<{ name: string; category: string; merchant: string; url: string }>> = {
+  '10-small-space-decor-ideas-to-maximize-your-apartment': [
+    {
+      name: 'Slender Tapered-Leg Sofas',
+      category: 'Living Room',
+      merchant: 'IKEA',
+      url: 'https://www.ikea.com/us/en/search/?q=sofa+wood+legs',
+    },
+    {
+      name: 'Washed Belgian Linen Drapes',
+      category: 'Window Decor',
+      merchant: 'Amazon Home',
+      url: 'https://www.amazon.com/s?k=washed+linen+curtains+pinch+pleat',
+    },
+    {
+      name: 'Floating Architectural Wall Shelves',
+      category: 'Storage',
+      merchant: 'Target',
+      url: 'https://www.target.com/s?searchTerm=floating+wall+shelves+wood',
+    },
+    {
+      name: 'Handwoven Seagrass Storage Baskets',
+      category: 'Organization',
+      merchant: 'IKEA',
+      url: 'https://www.ikea.com/us/en/search/?q=seagrass+basket',
+    },
+  ],
+  'how-to-create-a-cozy-bedroom-sanctuary-on-a-budget': [
+    {
+      name: 'Organic Washed Flax Linen Duvet Sets',
+      category: 'Bedding',
+      merchant: 'Amazon Home',
+      url: 'https://www.amazon.com/s?k=washed+linen+duvet+cover+set',
+    },
+    {
+      name: 'Fluted Timber Bedside Nightstands',
+      category: 'Bedroom Furniture',
+      merchant: 'Target',
+      url: 'https://www.target.com/s?searchTerm=fluted+nightstand',
+    },
+    {
+      name: 'Textured Moroccan Wool Loop Rugs',
+      category: 'Textiles',
+      merchant: 'IKEA',
+      url: 'https://www.ikea.com/us/en/search/?q=wool+rug+cream',
+    },
+  ],
+  'default': [
+    {
+      name: 'Scandinavian Bouclé Accent Chairs',
+      category: 'Seating',
+      merchant: 'IKEA',
+      url: 'https://www.ikea.com/us/en/search/?q=armchair+boucle',
+    },
+    {
+      name: 'Solid Oak Curved Coffee Tables',
+      category: 'Tables',
+      merchant: 'Target',
+      url: 'https://www.target.com/s?searchTerm=oval+wood+coffee+table',
+    },
+    {
+      name: 'Ribbed Ceramic Stoneware Planters',
+      category: 'Botanical Decor',
+      merchant: 'Amazon Home',
+      url: 'https://www.amazon.com/s?k=ceramic+planter+pot+ribbed',
+    },
+    {
+      name: 'Brushed Brass Arched Floor Lamps',
+      category: 'Lighting',
+      merchant: 'IKEA',
+      url: 'https://www.ikea.com/us/en/search/?q=floor+lamp+brass',
+    },
+  ],
+};
+
+const items = SHOPPING_GUIDES[postSlug] || SHOPPING_GUIDES['default'];
+---
+
+<div class="my-10 p-6 sm:p-8 rounded-3xl bg-white border border-cozi-border shadow-soft">
+  <div class="flex items-center justify-between pb-4 border-b border-cozi-border/70 flex-wrap gap-2">
+    <div>
+      <span class="text-[10px] font-bold uppercase tracking-wider text-cozi-olive block">
+        Where to Shop the Look
+      </span>
+      <h3 class="font-serif text-xl font-bold text-cozi-charcoal mt-0.5">
+        Curated Pieces & Retailer Directory
+      </h3>
+    </div>
+    <span class="text-[11px] text-cozi-charcoal/60 bg-cozi-cream/70 px-2.5 py-1 rounded-full border border-cozi-border/60">
+      Retailer Search Links
+    </span>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 my-5">
+    {items.map((item) => (
+      <div class="p-3.5 rounded-2xl bg-cozi-bg/50 border border-cozi-border/80 flex items-center justify-between gap-3 hover:bg-cozi-cream/50 transition-colors group">
+        <div>
+          <span class="text-[10px] text-cozi-charcoal/60 block">{item.category} • {item.merchant}</span>
+          <h4 class="font-semibold text-cozi-charcoal text-xs group-hover:text-cozi-olive transition-colors mt-0.5">
+            {item.name}
+          </h4>
+        </div>
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="py-1.5 px-3 bg-white hover:bg-cozi-olive hover:text-white text-cozi-charcoal text-xs font-semibold rounded-xl border border-cozi-border flex items-center gap-1.5 shadow-2xs transition-colors shrink-0"
+        >
+          <span>Browse Similar</span>
+          <svg class="w-3 h-3 stroke-current stroke-2 fill-none" viewBox="0 0 24 24">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    ))}
+  </div>
+
+  <!-- FTC & Affiliate Transparency Disclosure -->
+  <div class="pt-3 border-t border-cozi-border/70 text-[11px] text-cozi-charcoal/70 leading-relaxed space-y-1">
+    <p>
+      These links open retailer search pages for similar items. They are not individual product listings, and current prices and availability are shown by the retailer.
+    </p>
+  </div>
+</div>

@@ -8,6 +8,7 @@ import TableOfContents from '../components/TableOfContents.astro';
 import SocialShare from '../components/SocialShare.astro';
 import PostCard from '../components/PostCard.astro';
 import NewsletterBox from '../components/NewsletterBox.astro';
+import CuratedShoppingBox from '../components/CuratedShoppingBox.astro';
 import { POSTS } from '../data/posts';
 
 interface Props {
@@ -21,7 +22,7 @@ const postUrl = `${siteUrl}/blog/${post.slug}`;
 const shareImage = post.pinImage || post.featuredImage;
 
 // Related posts from same category or newest
-const relatedPosts = POSTS.filter(p => p.slug !== post.slug && (p.categorySlug === post.categorySlug || true)).slice(0, 3);
+const relatedPosts = POSTS.filter(p => p.slug !== post.slug && p.categorySlug === post.categorySlug).slice(0, 3);
 
 // Schema.org BlogPosting
 const articleSchema = {
@@ -35,12 +36,10 @@ const articleSchema = {
   description: post.excerpt,
   image: [post.featuredImage, shareImage],
   datePublished: new Date(post.publishDate).toISOString(),
-  dateModified: new Date().toISOString(),
+  dateModified: new Date(post.publishDate).toISOString(),
   author: {
-    '@type': 'Person',
-    name: post.author.name,
-    jobTitle: post.author.role,
-    image: post.author.avatar,
+    '@type': 'Organization',
+    name: 'Cozivara Living',
   },
   publisher: {
     '@type': 'Organization',
@@ -95,10 +94,10 @@ const breadcrumbsSchema = {
 
   <!-- Top Ad Slot (Leaderboard Banner) -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-    <AdSlot position="top" preview={true} />
+    <AdSlot position="top" />
   </div>
 
-  <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+  <article id="top" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
     
     <!-- Breadcrumbs Navigation -->
     <nav class="flex items-center text-xs text-cozi-charcoal/60 mb-6 flex-wrap gap-2" aria-label="Breadcrumb">
@@ -196,7 +195,7 @@ const breadcrumbsSchema = {
         />
       </div>
       <p class="text-center text-xs text-cozi-charcoal/50 italic mt-2.5">
-        Photo curation & styling by Cozivara Living Editorial Team. Pin this idea to your board.
+        Image from Unsplash. Save this idea to Pinterest.
       </p>
     </div>
 
@@ -216,8 +215,11 @@ const breadcrumbsSchema = {
 
         <!-- In-Article AdSlot -->
         <div class="my-8">
-          <AdSlot position="in-article" preview={true} />
+          <AdSlot position="in-article" />
         </div>
+
+        <!-- Where to Shop the Look (Merchant Shopping Links) -->
+        <CuratedShoppingBox postSlug={post.slug} categorySlug={post.categorySlug} />
 
         <!-- Dedicated Pinterest Pin Showcase Card (2:3 aspect ratio) -->
         {post.pinImage && (
@@ -299,12 +301,12 @@ const breadcrumbsSchema = {
         <div class="sticky top-28 space-y-8">
           
           <!-- AdSlot Position Sidebar -->
-          <AdSlot position="sidebar" preview={true} />
+          <AdSlot position="sidebar" />
 
           <!-- Mini Newsletter in Sidebar -->
           <div class="rounded-2xl bg-cozi-cream/70 border border-cozi-border p-6 shadow-soft">
             <span class="text-[10px] font-semibold tracking-widest uppercase text-cozi-olive block mb-1">
-              Join 45,000+ Readers
+              Stay in touch
             </span>
             <h4 class="font-serif text-lg font-bold text-cozi-charcoal mb-2">
               Weekly Home Inspo
@@ -312,20 +314,8 @@ const breadcrumbsSchema = {
             <p class="text-xs text-cozi-charcoal/70 mb-4 leading-relaxed">
               Receive our top interior styling guides, DIY tips, and seasonal checklists every Sunday morning.
             </p>
-            <form class="space-y-2">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-cozi-border text-xs text-cozi-charcoal focus:outline-hidden focus:border-cozi-olive" 
-                required 
-              />
-              <button 
-                type="submit" 
-                class="w-full py-2.5 rounded-xl bg-cozi-olive hover:bg-cozi-olive-dark text-white font-medium text-xs transition-colors shadow-xs"
-              >
-                Subscribe Free
-              </button>
-            </form>
+            <p class="text-xs text-cozi-charcoal/70">Newsletter signup is not available yet. Contact us if you would like to hear when it launches.</p>
+            <a href="mailto:cozivaraliving2495@gmail.com?subject=Newsletter%20interest" class="inline-block text-xs font-semibold text-cozi-olive underline">Email us</a>
           </div>
 
         </div>
@@ -338,7 +328,7 @@ const breadcrumbsSchema = {
 
   <!-- Bottom AdSlot (Leaderboard) -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <AdSlot position="bottom" preview={true} />
+    <AdSlot position="bottom" />
   </div>
 
   <!-- Related Posts Section -->

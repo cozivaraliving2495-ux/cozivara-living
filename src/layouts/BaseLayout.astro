@@ -37,11 +37,6 @@ const websiteSchema = {
   alternateName: 'Cozivara Home & Living',
   url: siteUrl,
   description: 'Make room for beautiful living. Warm organic neutral home decor, budget styling, and clutter-free living tips.',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${siteUrl}/blog?q={search_term_string}`,
-    'query-input': 'required name=search_term_string'
-  }
 };
 
 const organizationSchema = {
@@ -51,12 +46,6 @@ const organizationSchema = {
   url: siteUrl,
   logo: `${siteUrl}/images/logo.jpg`,
   email: 'cozivaraliving2495@gmail.com',
-  sameAs: [
-    'https://pinterest.com',
-    'https://instagram.com',
-    'https://facebook.com',
-    'https://youtube.com'
-  ]
 };
 ---
 
@@ -91,9 +80,6 @@ const organizationSchema = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={fullImageUrl} />
 
-    <!-- Pinterest Rich Pin Verification & Domain Claim Tag -->
-    <meta name="p:domain_verify" content="cozivaraliving_pinterest_verification" />
-
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="/images/logo.jpg" />
 
@@ -104,12 +90,6 @@ const organizationSchema = {
     <!-- Slot for Page-Specific Head Additions (e.g. Article Schema) -->
     <slot name="head" />
 
-    <!-- Google AdSense Auto Ads Script (Async & Non-blocking) -->
-    <script 
-      async 
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" 
-      crossorigin="anonymous"
-    ></script>
   </head>
 
   <body class="min-h-screen flex flex-col bg-cozi-bg text-cozi-charcoal selection:bg-cozi-olive selection:text-white antialiased">
