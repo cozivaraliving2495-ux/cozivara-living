@@ -433,7 +433,7 @@ export const POSTS: BlogPost[] = [
     categorySlug: 'lifestyle',
     categoryBadgeBg: 'bg-[#F2ECE6]',
     categoryBadgeText: 'text-[#6C5345]',
-    publishDate: 'Oct 28, 2026',
+    publishDate: 'Oct 22, 2026',
     readTime: '8 min read',
     author: DEFAULT_AUTHOR,
     featuredImage: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1200&q=80',
