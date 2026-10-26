@@ -192,8 +192,8 @@ export const RoomControls: React.FC<RoomControlsProps> = ({
                 <span className="font-bold text-cozi-charcoal text-xs flex items-center gap-1.5">
                   <Maximize2 className="w-3.5 h-3.5 text-cozi-olive" /> Dimensions & Area
                 </span>
-                <span className="font-serif font-bold text-cozi-olive text-sm">
-                  {areaSqFt} sq ft
+                <span className="font-numeric font-bold text-cozi-olive text-sm">
+                  {areaSqFt.toLocaleString('en-US')} sq ft
                 </span>
               </div>
 

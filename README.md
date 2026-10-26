@@ -11,7 +11,7 @@ Cozivara Living is an Astro site for home decor articles and a browser-based 3D 
 - `/design-my-room` — interactive room planner
 - `/about`, `/contact`, `/privacy-policy`, and `/terms` — information and policy pages
 
-The planner is built with React, Three.js, and React Three Fiber. It stores saved room designs in the browser's local storage. Contact opens a prefilled email draft in the visitor's mail app; newsletter signup is currently unavailable. Shopping buttons lead to retailer search pages and do not show prices or claim affiliate status.
+The planner is built with React, Three.js, and React Three Fiber. Its 3D entry is code-split from the small Astro island and its room metrics use the site's Playfair Display numerals. It stores saved room designs in the browser's local storage. On Netlify, the contact form submits to Netlify Forms; local development opens an email draft. Newsletter signup is currently unavailable. Shopping buttons lead to retailer search pages and do not show prices or claim affiliate status.
 
 ## Local development
 
@@ -32,7 +32,7 @@ npm run build    # Build the static site into dist/
 npm run preview  # Serve the production build locally
 ```
 
-The project currently has no dedicated lint or test script. Deployment configuration should be added for the hosting provider selected by the site owner; no Netlify configuration is present in this repository.
+The project currently has no dedicated lint or test script. Netlify deployment is configured in `netlify.toml` with `npm run build` and `dist` as the publish directory. Review `docs/netlify-launch-checklist.md` for account setup, environment variables, forms, SEO verification, Pinterest ownership, and AdSense steps.
 
 ## Project map
 

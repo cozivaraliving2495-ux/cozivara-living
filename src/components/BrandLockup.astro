@@ -1,0 +1,31 @@
+---
+interface Props {
+  tone?: 'light' | 'dark';
+}
+
+const { tone = 'light' } = Astro.props;
+const isDark = tone === 'dark';
+---
+
+<span class="inline-flex items-center gap-3">
+  <span class:list={[
+    'grid size-11 shrink-0 place-items-center rounded-2xl border shadow-sm transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105',
+    isDark ? 'border-white/15 bg-white/10 text-cozi-sand' : 'border-cozi-olive/15 bg-[#F3EFE7] text-cozi-olive',
+  ]} aria-hidden="true">
+    <svg viewBox="0 0 48 48" class="size-7" fill="none">
+      <path d="M7 23.5 24 9l17 14.5" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M12 21.5V39h24V21.5M20 39V27h8v12" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M32 12c-4.5.3-7.1 2.7-7.6 7.1 4.5-.2 7.1-2.6 7.6-7.1Z" fill="currentColor" />
+    </svg>
+  </span>
+  <span class="flex flex-col">
+    <span class:list={[
+      'font-serif text-[1.35rem] font-semibold leading-none tracking-[-0.045em]',
+      isDark ? 'text-white' : 'text-cozi-charcoal',
+    ]}>Cozivara</span>
+    <span class:list={[
+      'mt-1.5 text-[9px] font-semibold uppercase leading-none tracking-[0.34em]',
+      isDark ? 'text-white/65' : 'text-cozi-charcoal/60',
+    ]}>Living</span>
+  </span>
+</span>

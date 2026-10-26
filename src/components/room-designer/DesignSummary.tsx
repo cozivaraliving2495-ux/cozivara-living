@@ -66,8 +66,8 @@ export const DesignSummary: React.FC<DesignSummaryProps> = ({
               Room Area
             </span>
             <div className="flex items-baseline gap-1.5 mt-0.5">
-              <span className="font-serif text-2xl sm:text-3xl font-bold text-cozi-charcoal">
-                {areaSqFt}
+              <span className="font-numeric text-2xl sm:text-3xl font-bold text-cozi-charcoal">
+                {areaSqFt.toLocaleString('en-US')}
               </span>
               <span className="text-xs text-cozi-charcoal/70 font-medium">sq ft</span>
             </div>
@@ -87,7 +87,7 @@ export const DesignSummary: React.FC<DesignSummaryProps> = ({
               Placed Items
             </span>
             <div className="flex items-baseline gap-1.5 mt-0.5">
-              <span className="font-serif text-2xl sm:text-3xl font-bold text-cozi-charcoal">
+              <span className="font-numeric text-2xl sm:text-3xl font-bold text-cozi-charcoal">
                 {items.length}
               </span>
               <span className="text-xs text-cozi-charcoal/70 font-medium">pieces</span>

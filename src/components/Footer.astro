@@ -1,8 +1,18 @@
 ---
 // src/components/Footer.astro
 import { CATEGORIES } from '../data/categories';
+import BrandLockup from './BrandLockup.astro';
 
 const currentYear = new Date().getFullYear();
+let pinterestProfileUrl: string | undefined;
+try {
+  const candidate = new URL(import.meta.env.PUBLIC_PINTEREST_PROFILE_URL || '');
+  if (candidate.protocol === 'https:' && ['pinterest.com', 'www.pinterest.com'].includes(candidate.hostname)) {
+    pinterestProfileUrl = candidate.href;
+  }
+} catch {
+  // Do not render a broken or non-Pinterest profile link.
+}
 ---
 
 <footer class="bg-cozi-footer text-cozi-bg pt-16 pb-12 border-t border-white/10">
@@ -13,25 +23,8 @@ const currentYear = new Date().getFullYear();
       
       <!-- Brand Profile (4 columns) -->
       <div class="lg:col-span-4 space-y-4">
-        <a href="/" class="flex items-center gap-3 group" aria-label="Cozivara Living Home">
-          <div class="relative w-12 h-12 rounded-full overflow-hidden border border-white/20 p-0.5 bg-white/10">
-            <img 
-              src="/images/logo.jpg" 
-              alt="Cozivara Living" 
-              class="w-full h-full object-cover rounded-full"
-              width="48"
-              height="48"
-              loading="lazy"
-            />
-          </div>
-          <div class="flex flex-col">
-            <span class="font-serif text-2xl font-bold tracking-tight text-white leading-none">
-              Cozivara
-            </span>
-            <span class="font-sans text-[10px] tracking-[0.25em] uppercase text-white/70 font-semibold mt-1">
-              LIVING
-            </span>
-          </div>
+        <a href="/" class="group inline-flex rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cozi-sand focus-visible:ring-offset-4 focus-visible:ring-offset-cozi-footer" aria-label="Cozivara Living home">
+          <BrandLockup tone="dark" />
         </a>
 
         <p class="font-sans text-sm text-white/75 leading-relaxed max-w-sm pt-2">
@@ -76,6 +69,17 @@ const currentYear = new Date().getFullYear();
         >
           cozivaraliving2495@gmail.com
         </a>
+        {pinterestProfileUrl && (
+          <a
+            href={pinterestProfileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-xs font-semibold text-cozi-sand hover:text-white underline underline-offset-4 transition-colors"
+            aria-label="Follow Cozivara Living on Pinterest"
+          >
+            Follow us on Pinterest
+          </a>
+        )}
         <p class="text-[11px] text-white/60">
           We welcome questions and feedback by email.
         </p>

@@ -1,7 +1,7 @@
 ---
 // src/pages/design-my-room.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { RoomDesigner } from '../components/room-designer/RoomDesigner';
+import { RoomDesignerEntry } from '../components/RoomDesignerEntry';
 
 const title = '3D Design My Room Planner | Cozivara Living';
 const description = 'Arrange furniture in an interactive 3D room planner. Adjust room dimensions, wall colors, flooring, and furniture placement.';
@@ -10,6 +10,17 @@ const description = 'Arrange furniture in an interactive 3D room planner. Adjust
 <BaseLayout title={title} description={description}>
   <div class="py-4">
     <!-- Client-only interactive 3D application -->
-    <RoomDesigner client:only="react" />
+    <RoomDesignerEntry client:only="react">
+      <section slot="fallback" class="mx-auto flex min-h-[60vh] max-w-7xl items-center justify-center px-4 py-10 sm:px-6 lg:px-8">
+        <div class="max-w-2xl rounded-3xl border border-cozi-border bg-white p-8 text-center shadow-soft sm:p-12">
+          <p class="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-cozi-olive">Interactive 3D Room Planner</p>
+          <h1 class="font-serif text-3xl font-bold text-cozi-charcoal sm:text-4xl">Design My Room in 3D</h1>
+          <p class="mt-4 text-sm leading-relaxed text-cozi-charcoal/70 sm:text-base">
+            Plan a living room, bedroom, home office, or dining room. Set dimensions, choose walls and flooring, and arrange furniture in an interactive 3D workspace.
+          </p>
+          <p class="mt-5 text-xs text-cozi-charcoal/55" role="status" aria-live="polite">Loading the room planner…</p>
+        </div>
+      </section>
+    </RoomDesignerEntry>
   </div>
 </BaseLayout>

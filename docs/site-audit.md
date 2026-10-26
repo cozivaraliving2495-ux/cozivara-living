@@ -40,7 +40,7 @@ No Netlify configuration is present in the repository. The project has no lint o
 ## Repairs made
 
 - Removed fictitious subscriber counts, placeholder ad/verification identifiers, fake submission-success states, unsupported author credentials, and unsupported affiliate or product-price claims.
-- Contact now opens a prefilled email draft; it does not send the message. Newsletter signup states that it is unavailable and links to an email draft.
+- Contact is configured for Netlify Forms in production and uses an email-draft fallback on localhost. Netlify form capture and notification delivery still require the account-side settings in `docs/netlify-launch-checklist.md`. Newsletter signup states that it is unavailable and links to an email draft.
 - Contact fields now set sensible length limits and browser autocomplete, show the selected subject as readable text in the email draft, and explain that the visitor must send the draft. Direct email remains available if no email app opens.
 - Article edits remove overpromises (for example, mirrors “doubling” natural light), pseudo-scientific psychology or sleep language, mandatory decor ratios, and one-size-fits-all routines. Table-of-contents labels now match edited headings.
 - Retailer buttons are identified as search links for similar items. Prices and “best” product assertions were removed.
@@ -53,9 +53,23 @@ No Netlify configuration is present in the repository. The project has no lint o
 
 Google does not publish a minimum article word count that guarantees AdSense approval. Its publisher guidance focuses on original, useful content, site readiness, and policy compliance; adding filler to reach an arbitrary length would not address those criteria. The six posts are primarily home-decor inspiration. Their suggestions are labeled or worded as preferences, and factual plant-care or product-color statements link to relevant sources. The site still needs a human editorial review for originality, author transparency, and completeness before an application; no source audit can guarantee acceptance.
 
-`src/components/AdSlot.astro` is a reserved placeholder. This project currently contains no live AdSense script or publisher ID, so no live ad placement behavior was tested.
+AdSense is off unless a valid publisher ID and explicit Auto Ads setting are provided. Without approval credentials, this build has no live ad script and no visible placeholder ads. A valid ID generates Google's verification meta tag and an `ads.txt` record.
 
-The Contact page is a client-side `mailto:` form. Required name, valid email, subject, and message fields are checked by the browser; submission opens a draft addressed to the displayed Gmail address. The site has no contact backend and cannot confirm delivery. If a mail app is not configured, the user can use the visible direct email link. The form was not used to send any message.
+The Contact page is a Netlify Forms HTML form with required name, valid email, subject, message, length limits, and a honeypot. Netlify form detection and an email notification recipient still need to be enabled in the account. Localhost opens an email draft instead. No test message was transmitted.
+
+## Netlify launch preparation (October 25, 2026)
+
+- Added `netlify.toml` for Astro's `npm run build` and `dist` output.
+- Added a custom no-index contact success route and excluded it from the sitemap.
+- Added optional Google Search Console, Pinterest site-claim, and AdSense environment-variable hooks; unset values do not emit placeholder verification tokens or IDs.
+- The Pinterest profile remains unlinked because no account exists yet. Existing article Pin buttons still open Pinterest's save flow.
+- Added build-generated `/ads.txt`; it is empty until a real AdSense publisher ID is configured.
+- Moved font loading from CSS `@import` into preconnected head links, and applied the existing Playfair Display font with tabular number styling to planner metrics and dimensions.
+- The planner entry imports the React Three Fiber application as a separate lazy-loaded chunk. The small entry chunk is 2.71 kB (1.53 kB gzip); the 3D code is still 952.16 kB minified (254.10 kB gzip), loaded only on the planner route. This is not a Netlify storage limit issue, but the browser still downloads the 3D chunk when opening the planner.
+- Netlify account-side items still required: connect the site/domain, enable Forms detection, set a notification address, add Search Console verification, create/claim Pinterest if desired, and apply for AdSense. Configure consent controls before enabling advertising in regions where required.
+- `npm run build`: **passed**, 19 routes; `npx tsc --noEmit`: **passed**.
+- Static output checks: **passed** for contact form detection markup, success route, no-index sitemap exclusion, production canonical, default-off AdSense, no placeholder Pinterest verification, and lazy planner chunk output.
+- Responsive browser and deployed Netlify submission tests remain pending; this local build cannot verify account processing or email notifications.
 
 ## Validation results
 

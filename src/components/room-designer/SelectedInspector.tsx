@@ -192,7 +192,7 @@ export const SelectedInspector: React.FC<SelectedInspectorProps> = ({
               >
                 <ArrowLeft className="w-3.5 h-3.5 text-cozi-charcoal" />
               </button>
-              <div className="flex items-center justify-center text-[10px] text-cozi-charcoal/60 font-mono">
+              <div className="flex items-center justify-center text-[10px] text-cozi-charcoal/60 font-numeric">
                 0.5'
               </div>
               <button
@@ -216,7 +216,7 @@ export const SelectedInspector: React.FC<SelectedInspectorProps> = ({
               </button>
               <div></div>
             </div>
-            <div className="text-center text-[10px] text-cozi-charcoal/60 mt-1 font-mono">
+            <div className="text-center text-[10px] text-cozi-charcoal/60 mt-1 font-numeric">
               X: {item.position[0].toFixed(1)}' | Z: {item.position[2].toFixed(1)}'
             </div>
           </div>
@@ -265,7 +265,7 @@ export const SelectedInspector: React.FC<SelectedInspectorProps> = ({
             <span className="flex items-center gap-1">
               <Maximize className="w-3 h-3 text-cozi-olive" /> Dimensions (W × D × H)
             </span>
-            <span className="font-mono text-cozi-charcoal/70">
+            <span className="font-numeric text-cozi-charcoal/70">
               {item.widthFt.toFixed(1)}' × {item.depthFt.toFixed(1)}' × {item.heightFt.toFixed(1)}'
             </span>
           </div>
@@ -273,7 +273,7 @@ export const SelectedInspector: React.FC<SelectedInspectorProps> = ({
           <div className="space-y-1.5">
             <div className="flex items-center justify-between text-[11px]">
               <span className="text-cozi-charcoal/70">Width</span>
-              <span className="font-mono">{item.widthFt.toFixed(1)} ft</span>
+              <span className="font-numeric">{item.widthFt.toFixed(1)} ft</span>
             </div>
             <input
               type="range"
@@ -288,7 +288,7 @@ export const SelectedInspector: React.FC<SelectedInspectorProps> = ({
 
             <div className="flex items-center justify-between text-[11px]">
               <span className="text-cozi-charcoal/70">Depth</span>
-              <span className="font-mono">{item.depthFt.toFixed(1)} ft</span>
+              <span className="font-numeric">{item.depthFt.toFixed(1)} ft</span>
             </div>
             <input
               type="range"

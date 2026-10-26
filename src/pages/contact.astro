@@ -32,10 +32,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-cozi-border shadow-soft">
           <h2 class="font-serif text-2xl sm:text-3xl font-bold text-cozi-charcoal mb-2">Send Us a Message</h2>
           <p class="text-xs sm:text-sm text-cozi-charcoal/70 mb-8">
-            This form opens a draft in your email app; it does not send the message. If no email app opens, email us directly using the address alongside this form.
+            On our Netlify-hosted site, this form sends your message to our contact inbox. While testing locally, it opens an email draft instead. Please review our <a href="/privacy-policy" class="underline underline-offset-2 text-cozi-olive">Privacy Policy</a> before sending.
           </p>
 
-          <form id="contact-form" class="space-y-5">
+          <form id="contact-form" name="contact" method="POST" action="/contact-success" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-5">
+            <input type="hidden" name="form-name" value="contact" />
+            <div class="hidden" aria-hidden="true">
+              <label for="bot-field">Leave this field empty</label>
+              <input id="bot-field" name="bot-field" tabindex="-1" autocomplete="off" />
+            </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label for="full-name" class="block text-xs font-semibold uppercase tracking-wider text-cozi-charcoal/75 mb-1.5">Your Name</label>
@@ -96,7 +101,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               type="submit" 
               class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-cozi-olive hover:bg-cozi-olive-dark text-white font-medium text-sm transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer flex items-center justify-center gap-2"
             >
-              <span>Open Email Draft</span>
+              <span>Send Message</span>
               <svg class="w-4 h-4 stroke-current stroke-2 fill-none" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
@@ -179,8 +184,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <script>
   const form = document.getElementById('contact-form');
 
+  const query = new URLSearchParams(window.location.search);
+  if (query.get('topic') === 'newsletter') {
+    const subjectField = document.getElementById('subject');
+    const messageField = document.getElementById('message');
+    if (subjectField instanceof HTMLSelectElement) subjectField.value = 'general';
+    if (messageField instanceof HTMLTextAreaElement) {
+      messageField.value = 'I would like to hear when the Cozivara Living newsletter launches.';
+    }
+  }
+
   if (form instanceof HTMLFormElement) {
     form.addEventListener('submit', (e) => {
+      if (!['localhost', '127.0.0.1'].includes(window.location.hostname)) return;
       e.preventDefault();
       const data = new FormData(form);
       const subjectLabels = {
@@ -198,7 +214,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         String(data.get('message') || ''),
       ].join('\n');
       const status = document.getElementById('contact-form-status');
-      if (status) status.textContent = 'Opening your email app. Please review the draft and send it there.';
+      if (status) status.textContent = 'Local preview: opening your email app. Please review the draft and send it there.';
       window.location.href = `mailto:cozivaraliving2495@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   }

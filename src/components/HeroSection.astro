@@ -2,17 +2,17 @@
 // src/components/HeroSection.astro
 ---
 
-<section class="relative w-full overflow-hidden bg-cozi-bg pt-2 pb-12 sm:pb-16 lg:pb-20">
+<section class="relative w-full overflow-hidden bg-cozi-bg pb-12 pt-3 sm:pb-16 lg:pb-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Hero Card Container -->
-    <div class="relative rounded-3xl overflow-hidden shadow-soft border border-cozi-border/70 min-h-[500px] md:min-h-[580px] lg:min-h-[640px] flex items-center">
+    <div class="relative flex min-h-[500px] items-center overflow-hidden rounded-[1.75rem] border border-cozi-border/70 shadow-soft sm:min-h-[540px] lg:min-h-[620px]">
       
       <!-- Background Hero Image with Warm Natural Grading -->
       <img 
         src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2000&q=85" 
         alt="Serene neutral living room with cozy linen sofa and organic decor"
-        class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[1.01]"
+        class="absolute inset-0 h-full w-full object-cover object-[58%_center] brightness-[0.94] sm:object-center"
         width="1920"
         height="1080"
         loading="eager"
@@ -21,36 +21,41 @@
       />
 
       <!-- Natural, Soft Scrim Gradient (Gently feathered for maximum photographic clarity and text legibility) -->
-      <div class="absolute inset-0 bg-gradient-to-r from-[#FAF7F2]/80 via-[#FAF7F2]/35 to-transparent w-full sm:w-2/3 md:w-3/5 lg:w-1/2 pointer-events-none"></div>
+      <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#FAF7F2]/95 via-[#FAF7F2]/80 to-[#FAF7F2]/10 sm:via-[#FAF7F2]/65 sm:to-transparent lg:w-[76%]"></div>
+      <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#FAF7F2]/35 via-transparent to-transparent sm:hidden"></div>
       
       <!-- Hero Content Overlay -->
-      <div class="relative z-10 max-w-xl px-6 sm:px-10 lg:px-14 py-12 md:py-16">
+      <div class="relative z-10 max-w-2xl px-6 py-12 sm:px-10 sm:py-16 lg:px-16 lg:py-20">
         
         <!-- Category Eyebrow Tag -->
-        <span class="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-cozi-charcoal/80 mb-3 sm:mb-4 bg-[#FAF7F2]/70 backdrop-blur-xs px-3 py-1 rounded-full border border-cozi-border/60">
-          HOME DECOR &nbsp;/&nbsp; LIFESTYLE &nbsp;/&nbsp; INSPIRATION
+        <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-cozi-olive/15 bg-white/75 px-3.5 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-cozi-olive backdrop-blur-sm sm:mb-5 sm:text-[11px]">
+          <span class="size-1.5 rounded-full bg-cozi-olive"></span>
+          Thoughtful ideas for everyday homes
         </span>
 
         <!-- Primary Hero Title -->
-        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-cozi-charcoal leading-[1.12] tracking-tight mb-4 sm:mb-5 drop-shadow-xs">
-          Where Style <br class="hidden sm:inline" />Meets Serenity.
+        <h1 class="mb-4 font-serif text-[2.65rem] font-semibold leading-[1.08] tracking-[-0.04em] text-cozi-charcoal sm:mb-5 sm:text-5xl lg:text-[4.25rem]">
+          Make room for <span class="text-cozi-olive">beautiful living.</span>
         </h1>
 
         <!-- Hero Subheadline -->
-        <p class="font-sans text-base sm:text-lg text-cozi-charcoal/90 font-normal leading-relaxed mb-8 max-w-md drop-shadow-xs">
-          Curated Pieces. Timeless Elegance.
+        <p class="mb-8 max-w-lg text-sm leading-7 text-cozi-charcoal/80 sm:text-base sm:leading-8">
+          Find practical decorating ideas, small-space solutions and simple ways to make home feel more like you.
         </p>
 
         <!-- CTA Action Button (Only the primary 'Explore Ideas ->' button) -->
-        <div class="flex items-center">
+        <div class="flex flex-col gap-3 min-[420px]:flex-row min-[420px]:items-center">
           <a 
             href="#categories" 
-            class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-cozi-olive text-white font-medium text-sm sm:text-base shadow-sm hover:bg-cozi-olive-dark hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 group"
+            class="group inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full bg-cozi-olive px-6 py-3 text-sm font-semibold text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-cozi-olive-dark hover:shadow-md sm:px-7"
           >
             <span>Explore Ideas</span>
-            <svg class="w-4 h-4 stroke-current stroke-2 fill-none transform group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24">
+            <svg class="size-4 transform fill-none stroke-current stroke-2 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
+          </a>
+          <a href="/design-my-room" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-cozi-charcoal/20 bg-white/70 px-6 py-3 text-sm font-semibold text-cozi-charcoal transition hover:-translate-y-0.5 hover:border-cozi-olive/45 hover:bg-white hover:text-cozi-olive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cozi-olive sm:px-7">
+            Try the 3D room planner
           </a>
         </div>
 

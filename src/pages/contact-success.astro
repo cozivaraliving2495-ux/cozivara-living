@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Message Sent | Cozivara Living"
+  description="Thank you for contacting Cozivara Living. Your message has been submitted."
+  robots="noindex, follow"
+>
+  <section class="min-h-[55vh] flex items-center justify-center px-4 py-16 bg-cozi-bg">
+    <div class="max-w-xl w-full text-center bg-white rounded-3xl border border-cozi-border shadow-soft p-8 sm:p-12">
+      <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-cozi-olive/10 text-cozi-olive mb-5" aria-hidden="true">
+        <svg viewBox="0 0 24 24" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m5 12 4 4L19 6" />
+        </svg>
+      </span>
+      <h1 class="font-serif text-3xl sm:text-4xl font-bold text-cozi-charcoal mb-3">Thank you for your message</h1>
+      <p class="text-sm sm:text-base text-cozi-charcoal/75 leading-relaxed mb-7">
+        Your message was submitted. If you need to follow up, email us at
+        <a href="mailto:cozivaraliving2495@gmail.com" class="text-cozi-olive underline underline-offset-2">cozivaraliving2495@gmail.com</a>.
+      </p>
+      <a href="/" class="inline-flex rounded-full bg-cozi-olive px-6 py-3 text-sm font-semibold text-white hover:bg-cozi-olive-dark transition-colors">Back to home</a>
+    </div>
+  </section>
+</BaseLayout>
