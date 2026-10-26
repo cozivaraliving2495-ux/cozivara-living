@@ -2,17 +2,10 @@
 // src/components/Footer.astro
 import { CATEGORIES } from '../data/categories';
 import BrandLockup from './BrandLockup.astro';
+import { getPinterestProfileUrl } from '../utils/pinterest';
 
 const currentYear = new Date().getFullYear();
-let pinterestProfileUrl: string | undefined;
-try {
-  const candidate = new URL(import.meta.env.PUBLIC_PINTEREST_PROFILE_URL || '');
-  if (candidate.protocol === 'https:' && ['pinterest.com', 'www.pinterest.com'].includes(candidate.hostname)) {
-    pinterestProfileUrl = candidate.href;
-  }
-} catch {
-  // Do not render a broken or non-Pinterest profile link.
-}
+const pinterestProfileUrl = getPinterestProfileUrl(import.meta.env.PUBLIC_PINTEREST_PROFILE_URL);
 ---
 
 <footer class="bg-cozi-footer text-cozi-bg pt-16 pb-12 border-t border-white/10">

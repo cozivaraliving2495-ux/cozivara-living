@@ -22,14 +22,13 @@ Local development uses a `mailto:` fallback. A successful local email-draft test
 
 ## Pinterest account and website claim
 
-The Pinterest share buttons are ready and link to Pinterest's Pin-creation flow. No brand account exists yet, so the footer intentionally does not show a fabricated profile link.
+The Pinterest share buttons link to Pinterest's Pin-creation flow. The header and footer link to the Cozivara Living Pinterest account. The profile URL can be overridden with `PUBLIC_PINTEREST_PROFILE_URL` if the account URL changes.
 
-After creating a Pinterest Business account and claiming `cozivaraliving.com`, set these Netlify build environment variables to the exact values Pinterest provides, then redeploy:
+To claim `cozivaraliving.com`, set the verification value from Pinterest in Netlify and redeploy:
 
-- `PUBLIC_PINTEREST_PROFILE_URL` — the public profile URL, such as `https://www.pinterest.com/your-profile/`.
 - `PUBLIC_PINTEREST_VERIFICATION` — the token from Pinterest's HTML-tag verification method. DNS TXT verification is another option and does not require this variable.
 
-The profile link only renders for valid HTTPS `pinterest.com` URLs. The verification token is emitted as Pinterest's `p:domain_verify` meta tag.
+The optional verification token is emitted as Pinterest's `p:domain_verify` meta tag. Domain claim verification is separate from linking the public profile.
 
 ## AdSense account and consent
 
