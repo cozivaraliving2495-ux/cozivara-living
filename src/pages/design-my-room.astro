@@ -18,9 +18,30 @@ const description = 'Arrange furniture in an interactive 3D room planner. Adjust
           <p class="mt-4 text-sm leading-relaxed text-cozi-charcoal/70 sm:text-base">
             Plan a living room, bedroom, home office, or dining room. Set dimensions, choose walls and flooring, and arrange furniture in an interactive 3D workspace.
           </p>
-          <p class="mt-5 text-xs text-cozi-charcoal/55" role="status" aria-live="polite">Loading the room planner…</p>
+          <p class="mt-5 text-xs text-cozi-charcoal/55" data-planner-status role="status" aria-live="polite">Loading the room planner…</p>
+          <button type="button" data-planner-retry hidden class="mt-4 rounded-full bg-cozi-olive px-5 py-2.5 text-sm font-semibold text-white hover:bg-cozi-olive-dark">
+            Reload the planner
+          </button>
         </div>
       </section>
     </RoomDesignerEntry>
   </div>
 </BaseLayout>
+
+<script>
+  const plannerIsland = document.querySelector('astro-island[client="only"]');
+  const plannerStatus = plannerIsland?.querySelector<HTMLElement>('[data-planner-status]');
+  const plannerRetry = plannerIsland?.querySelector<HTMLButtonElement>('[data-planner-retry]');
+
+  if (plannerIsland && plannerStatus && plannerRetry) {
+    const loadingTimeout = window.setTimeout(() => {
+      if (!plannerIsland.hasAttribute('ssr')) return;
+
+      plannerStatus.textContent = 'The planner is taking longer than expected. Check your connection and try again.';
+      plannerRetry.hidden = false;
+    }, 12000);
+
+    plannerIsland.addEventListener('astro:hydrate', () => window.clearTimeout(loadingTimeout), { once: true });
+    plannerRetry.addEventListener('click', () => window.location.reload());
+  }
+</script>
