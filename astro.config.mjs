@@ -39,8 +39,6 @@ export default defineConfig({
             if (moduleId.includes('/node_modules/three/src/')) return 'three-core';
             if (moduleId.includes('/node_modules/three/')) return 'three-vendor';
             if (moduleId.includes('/node_modules/three-stdlib/')) return 'three-controls';
-            if (moduleId.includes('/node_modules/@react-three/')) return 'react-three-vendor';
-
             return undefined;
           },
         },
