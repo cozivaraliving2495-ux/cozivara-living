@@ -1,0 +1,115 @@
+---
+const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID?.trim() || '';
+const validMeasurementId = /^G-[A-Z0-9]+$/.test(measurementId);
+---
+
+{validMeasurementId && (
+  <aside
+    class="fixed inset-x-4 bottom-4 z-50 mx-auto max-w-2xl rounded-2xl border border-cozi-border bg-white p-5 shadow-xl sm:inset-x-6 sm:p-6"
+    aria-label="Analytics privacy choices"
+    aria-describedby="analytics-consent-copy"
+    data-analytics-consent
+    data-measurement-id={measurementId}
+    hidden
+  >
+    <h2 class="font-serif text-lg font-bold text-cozi-charcoal">Your privacy choices</h2>
+    <p id="analytics-consent-copy" class="mt-2 text-sm leading-relaxed text-cozi-charcoal/75">
+      May we use Google Analytics to understand which pages visitors find useful? Analytics will load only if you allow it. You can change this choice later in the footer's Privacy settings.
+      <a href="/privacy-policy#analytics-settings" class="text-cozi-olive underline underline-offset-2">Learn more</a>.
+    </p>
+    <div class="mt-4 flex flex-wrap gap-3">
+      <button
+        type="button"
+        class="rounded-full bg-cozi-olive px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cozi-olive-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cozi-olive focus-visible:ring-offset-2"
+        data-analytics-accept
+      >
+        Allow analytics
+      </button>
+      <button
+        type="button"
+        class="rounded-full border border-cozi-border px-5 py-2.5 text-sm font-semibold text-cozi-charcoal transition-colors hover:bg-cozi-bg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cozi-olive focus-visible:ring-offset-2"
+        data-analytics-reject
+      >
+        Only necessary
+      </button>
+    </div>
+  </aside>
+)}
+
+<script>
+  type AnalyticsWindow = Window & {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  };
+
+  const consentKey = 'cozivara-analytics-consent-v1';
+  const banner = document.querySelector<HTMLElement>('[data-analytics-consent]');
+
+  if (banner) {
+    const measurementId = banner.dataset.measurementId;
+    let tagLoaded = false;
+
+    const loadAnalytics = () => {
+      if (!measurementId || tagLoaded) return;
+      tagLoaded = true;
+
+      const analyticsWindow = window as AnalyticsWindow;
+      analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
+      analyticsWindow.gtag = (...args: unknown[]) => analyticsWindow.dataLayer?.push(args);
+      analyticsWindow.gtag('js', new Date());
+      analyticsWindow.gtag('config', measurementId);
+
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
+      document.head.append(script);
+    };
+
+    const showBanner = () => {
+      banner.hidden = false;
+      banner.querySelector<HTMLButtonElement>('[data-analytics-accept]')?.focus();
+    };
+
+    const saveChoice = (choice: 'granted' | 'denied') => {
+      try {
+        window.localStorage.setItem(consentKey, choice);
+      } catch {
+        // A visitor may block browser storage; honor the choice for this page view.
+      }
+
+      if (choice === 'denied' && tagLoaded) {
+        const analyticsWindow = window as AnalyticsWindow;
+        analyticsWindow.gtag?.('consent', 'update', { analytics_storage: 'denied' });
+        document.cookie.split(';').forEach((cookie) => {
+          const name = cookie.split('=')[0]?.trim();
+          if (name === '_ga' || name?.startsWith('_ga_')) {
+            document.cookie = `${name}=; Max-Age=0; path=/`;
+            document.cookie = `${name}=; Max-Age=0; path=/; domain=${window.location.hostname}`;
+          }
+        });
+        window.location.reload();
+        return;
+      }
+
+      banner.hidden = true;
+      if (choice === 'granted') loadAnalytics();
+    };
+
+    let savedChoice: string | null = null;
+    try {
+      savedChoice = window.localStorage.getItem(consentKey);
+    } catch {
+      // If storage is unavailable, ask for a choice during this page view.
+    }
+
+    if (savedChoice === 'granted') loadAnalytics();
+    else if (savedChoice !== 'denied') showBanner();
+
+    banner.querySelector('[data-analytics-accept]')?.addEventListener('click', () => saveChoice('granted'));
+    banner.querySelector('[data-analytics-reject]')?.addEventListener('click', () => saveChoice('denied'));
+
+    document.querySelectorAll<HTMLButtonElement>('[data-open-analytics-preferences]').forEach((button) => {
+      button.addEventListener('click', showBanner);
+    });
+  }
+</script>

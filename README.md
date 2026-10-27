@@ -11,7 +11,7 @@ Cozivara Living is an Astro site for home decor articles and a browser-based 3D 
 - `/design-my-room` — interactive room planner
 - `/about`, `/contact`, `/privacy-policy`, and `/terms` — information and policy pages
 
-The planner is built with React, Three.js, and React Three Fiber. Its 3D entry is code-split from the small Astro island and its room metrics use the site's Playfair Display numerals. It stores saved room designs in the browser's local storage. On Netlify, the contact form submits to Netlify Forms; local development opens an email draft. Newsletter signup is currently unavailable. Shopping buttons lead to retailer search pages and do not show prices or claim affiliate status.
+The planner is built with React, Three.js, and React Three Fiber. Its 3D entry is code-split from the small Astro island and its room metrics use the site's Playfair Display numerals. It stores saved room designs in the browser's local storage. On Netlify, the contact form submits to Netlify Forms; local development opens an email draft. Newsletter signup is currently unavailable. Google Analytics 4 can be enabled with `PUBLIC_GA_MEASUREMENT_ID`; the tag loads only after a visitor opts in. Shopping buttons lead to retailer search pages and do not show prices or claim affiliate status.
 
 ## Local development
 

@@ -19,6 +19,12 @@ Local development uses a `mailto:` fallback. A successful local email-draft test
 - **Pending:** Submit `https://cozivaraliving.com/sitemap-index.xml` in Search Console after the domain resolves over HTTPS.
 - The project emits canonical, Open Graph, Twitter, and JSON-LD metadata. Verify a sample production article URL and its featured image after deployment.
 
+## Google Analytics 4
+
+- **Pending account setup:** Create a GA4 property and Web data stream for `https://cozivaraliving.com`, then copy the real Measurement ID beginning with `G-` from the stream details.
+- Add `PUBLIC_GA_MEASUREMENT_ID` to Netlify's production environment variables and redeploy. The site validates the ID and loads the Google tag only after a visitor chooses “Allow analytics.” “Only necessary” prevents loading; the choice can be changed from Privacy settings in the footer.
+- Verify the tag in Google Analytics Realtime or with Tag Assistant after allowing analytics. Do not expect visitors who decline analytics to appear in GA4.
+
 ## Pinterest account and website claim
 
 The Pinterest share buttons link to Pinterest's Pin-creation flow. The header and footer link to the Cozivara Living Pinterest account. The profile URL can be overridden with `PUBLIC_PINTEREST_PROFILE_URL` if the account URL changes.
@@ -41,12 +47,13 @@ The same client ID can be used for AdSense's publisher verification meta tag; th
 
 ## Email and privacy
 
-The Netlify contact form collects only the name, email address, subject, and message fields. Configure the form's notification recipient in Netlify and review Netlify's data processing and retention terms. The privacy page describes Netlify Forms, local-development behavior, external fonts/images, and the optional AdSense state. The site does not currently collect newsletter subscriptions.
+The Netlify contact form collects only the name, email address, subject, and message fields. Review Netlify's data processing and retention terms. The privacy page describes Netlify Forms, local-development behavior, external fonts/images, consent-gated optional analytics, and the optional AdSense state. The site does not currently collect newsletter subscriptions.
 
 ## Remaining account-owner tasks
 
 - Confirm the production domain and HTTPS are configured in Netlify/DNS.
 - Verify an actual contact form submission and notification delivery.
 - Add the site's Search Console verification method and submit the sitemap.
+- Create a GA4 property/data stream, add its real Measurement ID to Netlify, and verify events in Realtime after opting in.
 - Claim the website in the existing Pinterest account using its real verification token if desired.
 - Complete AdSense review; add the real publisher ID only when issued. Configure consent and Auto ads only when appropriate.
