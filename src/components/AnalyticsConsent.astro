@@ -33,6 +33,17 @@ const validMeasurementId = /^G-[A-Z0-9]+$/.test(measurementId);
         Only necessary
       </button>
     </div>
+    <p class="mt-3 text-sm text-red-800" data-analytics-load-error role="status" hidden>
+      Analytics couldn't connect. Your site visit is unaffected. Check your connection and try again.
+    </p>
+    <button
+      type="button"
+      class="mt-3 rounded-full border border-cozi-border px-5 py-2.5 text-sm font-semibold text-cozi-charcoal transition-colors hover:bg-cozi-bg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cozi-olive focus-visible:ring-offset-2"
+      data-analytics-retry
+      hidden
+    >
+      Retry analytics
+    </button>
   </aside>
 )}
 
@@ -51,6 +62,10 @@ const validMeasurementId = /^G-[A-Z0-9]+$/.test(measurementId);
 
     const loadAnalytics = () => {
       if (!measurementId || tagLoaded) return;
+      const loadError = banner.querySelector<HTMLElement>('[data-analytics-load-error]');
+      const retryButton = banner.querySelector<HTMLButtonElement>('[data-analytics-retry]');
+      if (loadError) loadError.hidden = true;
+      if (retryButton) retryButton.hidden = true;
       tagLoaded = true;
 
       const analyticsWindow = window as AnalyticsWindow;
@@ -67,9 +82,17 @@ const validMeasurementId = /^G-[A-Z0-9]+$/.test(measurementId);
       script.addEventListener('load', () => {
         analyticsWindow.gtag?.('event', 'page_view', {
           page_title: document.title,
-          page_location: window.location.href,
-          page_path: `${window.location.pathname}${window.location.search}${window.location.hash}`,
+          page_location: `${window.location.origin}${window.location.pathname}`,
+          page_path: window.location.pathname,
         });
+      }, { once: true });
+      script.addEventListener('error', () => {
+        tagLoaded = false;
+        script.remove();
+        if (loadError) loadError.hidden = false;
+        if (retryButton) retryButton.hidden = false;
+        banner.hidden = false;
+        retryButton?.focus();
       }, { once: true });
       document.head.append(script);
     };
@@ -116,6 +139,10 @@ const validMeasurementId = /^G-[A-Z0-9]+$/.test(measurementId);
 
     banner.querySelector('[data-analytics-accept]')?.addEventListener('click', () => saveChoice('granted'));
     banner.querySelector('[data-analytics-reject]')?.addEventListener('click', () => saveChoice('denied'));
+    banner.querySelector('[data-analytics-retry]')?.addEventListener('click', () => {
+      banner.hidden = true;
+      loadAnalytics();
+    });
 
     document.querySelectorAll<HTMLButtonElement>('[data-open-analytics-preferences]').forEach((button) => {
       button.addEventListener('click', showBanner);
