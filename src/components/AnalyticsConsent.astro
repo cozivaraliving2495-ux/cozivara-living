@@ -55,7 +55,9 @@ const validMeasurementId = /^G-[A-Z0-9]+$/.test(measurementId);
 
       const analyticsWindow = window as AnalyticsWindow;
       analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
-      analyticsWindow.gtag = (...args: unknown[]) => analyticsWindow.dataLayer?.push(args);
+      analyticsWindow.gtag = function () {
+        analyticsWindow.dataLayer?.push(arguments);
+      };
       analyticsWindow.gtag('js', new Date());
       analyticsWindow.gtag('config', measurementId, { send_page_view: false });
 
