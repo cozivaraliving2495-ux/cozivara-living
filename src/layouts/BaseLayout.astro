@@ -29,7 +29,7 @@ const {
   robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
 } = Astro.props;
 
-const siteUrl = 'https://cozivaraliving.com';
+const siteUrl = (Astro.site?.toString() || 'https://soft-speculoos-00d35e.netlify.app').replace(/\/+$/, '');
 const pageCanonicalUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
 const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();

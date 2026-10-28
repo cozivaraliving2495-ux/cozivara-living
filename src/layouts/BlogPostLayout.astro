@@ -17,7 +17,7 @@ interface Props {
 
 const { post } = Astro.props;
 
-const siteUrl = 'https://cozivaraliving.com';
+const siteUrl = (Astro.site?.toString() || 'https://soft-speculoos-00d35e.netlify.app').replace(/\/+$/, '');
 const postUrl = `${siteUrl}/blog/${post.slug}`;
 const shareImage = post.pinImage || post.featuredImage;
 

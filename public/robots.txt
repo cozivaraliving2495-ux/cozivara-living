@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cozivaraliving.com/sitemap-index.xml
+Sitemap: https://soft-speculoos-00d35e.netlify.app/sitemap-index.xml

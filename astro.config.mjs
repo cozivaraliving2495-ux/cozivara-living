@@ -5,16 +5,19 @@ import react from '@astrojs/react';
 import { fileURLToPath } from 'node:url';
 
 const threeSourceEntry = fileURLToPath(new URL('./node_modules/three/src/Three.js', import.meta.url));
+// Use the live Netlify hostname until a custom domain is configured. Set
+// PUBLIC_SITE_URL in Netlify when the site's primary domain changes.
+const siteUrl = (process.env.PUBLIC_SITE_URL?.trim() || 'https://soft-speculoos-00d35e.netlify.app').replace(/\/+$/, '');
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://cozivaraliving.com',
+  site: siteUrl,
   integrations: [
     tailwind({
       applyBaseStyles: false,
     }),
     sitemap({
-      filter: (page) => !page.endsWith('/contact-success'),
+      filter: (page) => !new URL(page).pathname.replace(/\/+$/, '').endsWith('/contact-success'),
     }),
     react(),
   ],
