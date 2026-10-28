@@ -55,6 +55,12 @@ const validMeasurementId = /^G-[A-Z0-9]+$/.test(measurementId);
 
   const consentKey = 'cozivara-analytics-consent-v1';
   const banner = document.querySelector<HTMLElement>('[data-analytics-consent]');
+  const deniedConsent = {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+  } as const;
 
   if (banner) {
     const measurementId = banner.dataset.measurementId;
@@ -73,6 +79,11 @@ const validMeasurementId = /^G-[A-Z0-9]+$/.test(measurementId);
       analyticsWindow.gtag = function () {
         analyticsWindow.dataLayer?.push(arguments);
       };
+      analyticsWindow.gtag('consent', 'default', deniedConsent);
+      analyticsWindow.gtag('consent', 'update', {
+        ...deniedConsent,
+        analytics_storage: 'granted',
+      });
       analyticsWindow.gtag('js', new Date());
       analyticsWindow.gtag('config', measurementId, { send_page_view: false });
 
@@ -111,7 +122,7 @@ const validMeasurementId = /^G-[A-Z0-9]+$/.test(measurementId);
 
       if (choice === 'denied' && tagLoaded) {
         const analyticsWindow = window as AnalyticsWindow;
-        analyticsWindow.gtag?.('consent', 'update', { analytics_storage: 'denied' });
+        analyticsWindow.gtag?.('consent', 'update', deniedConsent);
         document.cookie.split(';').forEach((cookie) => {
           const name = cookie.split('=')[0]?.trim();
           if (name === '_ga' || name?.startsWith('_ga_')) {
