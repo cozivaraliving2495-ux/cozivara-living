@@ -20,6 +20,8 @@ const { post } = Astro.props;
 const siteUrl = (Astro.site?.toString() || 'https://soft-speculoos-00d35e.netlify.app').replace(/\/+$/, '');
 const postUrl = `${siteUrl}/blog/${post.slug}`;
 const shareImage = post.pinImage || post.featuredImage;
+// Parse the editorial calendar date in UTC so local and Netlify builds emit the same day.
+const publishDateISO = new Date(`${post.publishDate} 00:00:00 UTC`).toISOString();
 
 // Related posts from same category or newest
 const relatedPosts = POSTS.filter(p => p.slug !== post.slug && p.categorySlug === post.categorySlug).slice(0, 3);
@@ -35,8 +37,8 @@ const articleSchema = {
   headline: post.title,
   description: post.excerpt,
   image: [post.featuredImage, shareImage],
-  datePublished: new Date(post.publishDate).toISOString(),
-  dateModified: new Date(post.publishDate).toISOString(),
+  datePublished: publishDateISO,
+  dateModified: publishDateISO,
   author: {
     '@type': 'Organization',
     name: 'Cozivara Living',
@@ -83,7 +85,7 @@ const breadcrumbsSchema = {
   description={post.excerpt}
   image={shareImage}
   type="article"
-  publishDate={new Date(post.publishDate).toISOString()}
+  publishDate={publishDateISO}
   authorName={post.author.name}
   canonicalUrl={postUrl}
 >
