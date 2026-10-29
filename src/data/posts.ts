@@ -31,6 +31,127 @@ const DEFAULT_AUTHOR = {
 
 export const POSTS: BlogPost[] = [
   {
+    slug: 'how-to-choose-the-right-living-room-rug-size-and-placement',
+    title: 'How to Choose the Right Living Room Rug Size and Placement',
+    excerpt: 'A practical measuring-first guide to rug size, furniture placement, materials, and keeping everyday walking routes clear.',
+    category: 'Small Spaces',
+    categorySlug: 'small-spaces',
+    categoryBadgeBg: 'bg-[#EEF2EC]',
+    categoryBadgeText: 'text-[#485540]',
+    publishDate: 'Oct 28, 2026',
+    readTime: '6 min read',
+    author: DEFAULT_AUTHOR,
+    featuredImage: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80',
+    pinImage: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Warm living room with a neutral rug anchoring the seating area',
+    pinterestDescription: 'A measure-first guide to living room rug sizing, furniture placement, materials, and safer walking routes.',
+    headings: [
+      { depth: 2, slug: 'measure-the-seating-area-first', text: 'Measure the Seating Area First' },
+      { depth: 2, slug: 'choose-a-rug-layout-that-fits-your-room', text: 'Choose a Layout That Fits Your Room' },
+      { depth: 2, slug: 'check-clearances-before-you-buy', text: 'Check Clearances Before You Buy' },
+      { depth: 2, slug: 'match-material-to-how-you-live', text: 'Match the Material to How You Live' },
+      { depth: 2, slug: 'keep-edges-flat-and-walking-routes-clear', text: 'Keep Edges Flat and Routes Clear' },
+      { depth: 2, slug: 'a-simple-rug-measuring-checklist', text: 'A Simple Rug-Measuring Checklist' },
+    ],
+    contentHtml: `
+      <p>The right living room rug can visually connect a sofa, chairs, and coffee table, while giving the seating area a softer surface. The best size depends on the room, furniture, doorways, and the amount of floor you want to show. Rather than relying on one “standard” size, map the layout before shopping.</p>
+
+      <h2 id="measure-the-seating-area-first">Measure the Seating Area First</h2>
+      <p>Measure the furniture group, not just the empty floor. Note the sofa width and depth, chair positions, coffee-table footprint, and the main routes people use to cross the room. Then measure the open floor around that group, including nearby doors and built-ins.</p>
+      <p>Use painter’s tape to mark a few candidate rug outlines on the floor. Walk around the taped shapes, open doors, and pull chairs in and out as you normally would. This inexpensive mock-up helps reveal a size that looks balanced on a screen but crowds a real doorway or passage.</p>
+      <p>Working with a compact layout? Our <a href="/blog/10-small-space-decor-ideas-to-maximize-your-apartment">small-apartment decorating guide</a> also covers furniture scale and clear walking routes.</p>
+
+      <h2 id="choose-a-rug-layout-that-fits-your-room">Choose a Layout That Fits Your Room</h2>
+      <p>There is more than one workable furniture-to-rug arrangement. In a larger seating area, placing the front legs of the sofa and chairs on the rug can visually join the group while leaving some back legs on the floor. If the room and rug are large enough, all furniture legs can sit on it for a more unified footprint.</p>
+      <p>In a compact room, a smaller rug centered beneath the coffee table may suit the plan, especially when a larger rug would interfere with doors or walkways. Keep the arrangement intentional: align the rug with the main seating group or room feature instead of leaving it slightly skewed by accident.</p>
+      <p>These are layout options, not building rules. Compare the taped outline with your furniture and the room’s proportions, then choose the arrangement that feels comfortable to use.</p>
+
+      <h2 id="check-clearances-before-you-buy">Check Clearances Before You Buy</h2>
+      <p>Check the rug’s total dimensions, pile height, and door clearance. A thick edge can catch a door or make a chair harder to move. If your chairs sit partly on the rug, slide them back from the table to make sure their legs do not catch at the rug edge.</p>
+      <p>Think about what will sit underneath the rug, too. A pad should be compatible with both the rug backing and your floor finish. Follow the flooring and rug makers’ care guidance, particularly for delicate wood, stone, or resilient floors. Avoid assuming that every pad material is suitable for every surface.</p>
+
+      <h2 id="match-material-to-how-you-live">Match the Material to How You Live</h2>
+      <p>Choose a rug based on the room’s actual use. A low-pile, easy-to-clean option may be simpler under a dining table or in a busy entry route; a softer pile can feel pleasant in a quieter seating area. Fibers, weaves, backing, and cleaning instructions differ by product, so check the label and manufacturer’s care directions before buying.</p>
+      <p>Color and pattern also affect how the room reads. A tonal rug can blend with upholstery and let artwork stand out; a stronger pattern can give a simple furniture group a focal point. Bring home samples when possible and view them beside the floor and upholstery in both daylight and evening light.</p>
+
+      <h2 id="keep-edges-flat-and-walking-routes-clear">Keep Edges Flat and Routes Clear</h2>
+      <p>After placement, check that the rug lies flat and stays put when walked on. Use a compatible non-slip pad or other manufacturer-approved method if needed, and recheck corners after cleaning or moving furniture. Do not cover damaged flooring or leave curled edges where people walk.</p>
+      <p>The U.S. Consumer Product Safety Commission advises keeping walking surfaces in good condition and free of trip hazards; it specifically identifies loose carpets and other obstacles as potential problems. See the <a href="https://www.cpsc.gov/s3fs-public/701.pdf" target="_blank" rel="noopener noreferrer">CPSC home safety checklist</a>. This does not mean a rug is inherently unsafe—secure placement and a clear route matter.</p>
+      <p>Keep charging and lamp cords out of the route, too. If the rug overlaps a transition between rooms, make sure the edge is flat and easy to see. Reassess after rearranging the furniture or changing the rug pad.</p>
+
+      <h2 id="a-simple-rug-measuring-checklist">A Simple Rug-Measuring Checklist</h2>
+      <ul>
+        <li>Measure the seating group and available floor in both directions.</li>
+        <li>Mark candidate sizes with painter’s tape and test doors, chairs, and walking paths.</li>
+        <li>Decide which furniture legs should sit on the rug before choosing dimensions.</li>
+        <li>Check pile height, cleaning directions, backing, and compatibility of any pad.</li>
+        <li>After placement, confirm that the rug lies flat and does not shift underfoot.</li>
+      </ul>
+      <p>Take those measurements with you when comparing options. A rug that fits the way you sit, walk, clean, and care for the floor will usually serve the room better than a size chosen only from a styling formula.</p>
+    `,
+  },
+  {
+    slug: 'living-room-lighting-guide-lumens-color-temperature-and-layers',
+    title: 'A Living Room Lighting Guide: Lumens, Color Temperature, and Layers',
+    excerpt: 'Understand the bulb label, plan ambient and task light, and make a living room easier to use from daytime reading to evening conversation.',
+    category: 'Lifestyle',
+    categorySlug: 'lifestyle',
+    categoryBadgeBg: 'bg-[#F2ECE6]',
+    categoryBadgeText: 'text-[#6C5345]',
+    publishDate: 'Oct 28, 2026',
+    readTime: '7 min read',
+    author: DEFAULT_AUTHOR,
+    featuredImage: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=1200&q=80',
+    pinImage: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'A softly lit living room with warm layered lamps and natural finishes',
+    pinterestDescription: 'A practical living room lighting guide to lumens, warm and cool light, task lamps, dimmers, and layered fixtures.',
+    headings: [
+      { depth: 2, slug: 'start-with-the-activities-in-your-room', text: 'Start with the Activities in Your Room' },
+      { depth: 2, slug: 'read-lumens-instead-of-shopping-by-watts', text: 'Read Lumens Instead of Shopping by Watts' },
+      { depth: 2, slug: 'choose-a-light-color-you-enjoy', text: 'Choose a Light Color You Enjoy' },
+      { depth: 2, slug: 'layer-overhead-task-and-accent-light', text: 'Layer Overhead, Task, and Accent Light' },
+      { depth: 2, slug: 'check-fixture-and-dimmer-compatibility', text: 'Check Fixture and Dimmer Compatibility' },
+      { depth: 2, slug: 'a-room-by-room-lighting-check', text: 'A Simple Living Room Lighting Check' },
+    ],
+    contentHtml: `
+      <p>A living room may be used for reading, conversation, watching a screen, hobbies, or all of those in one day. One bright ceiling fixture does not always make each activity comfortable. A useful plan starts with what happens in the room, then combines light sources that can be switched on as needed.</p>
+
+      <h2 id="start-with-the-activities-in-your-room">Start with the Activities in Your Room</h2>
+      <p>Sketch the room and mark the sofa, favorite reading seat, television, shelves, and any work or hobby surface. Note the existing ceiling fixture, outlets, and windows. This quick map shows where you need broad room light and where a more focused lamp may help.</p>
+      <p>Think in three flexible roles: ambient light for general visibility, task light directed toward an activity, and accent light for a feature such as artwork or a bookcase. These are planning terms rather than a requirement to buy three fixtures. A well-positioned floor lamp or a dimmable fixture may cover more than one role.</p>
+
+      <h2 id="read-lumens-instead-of-shopping-by-watts">Read Lumens Instead of Shopping by Watts</h2>
+      <p>Lumens describe a bulb’s light output; watts describe the electrical power it uses. ENERGY STAR notes that a traditional 60-watt incandescent brightness is commonly matched by a bulb rated at least 800 lumens. Treat that comparison as a starting point when replacing a bulb, then check the fixture, shade, and manufacturer’s guidance.</p>
+      <p>For more brightness, compare lumen numbers on the package rather than assuming a higher-watt LED will be brighter. The room’s wall color, shade, fixture direction, and distance from the surface all affect how bright the light feels where you use it. A task lamp placed near a book can be more useful than simply increasing every bulb’s output.</p>
+      <p>ENERGY STAR’s <a href="https://www.energystar.gov/products/learn-about-brightness" target="_blank" rel="noopener noreferrer">brightness guide</a> includes common incandescent-to-lumen comparisons. Check the actual bulb label for its output and energy use.</p>
+
+      <h2 id="choose-a-light-color-you-enjoy">Choose a Light Color You Enjoy</h2>
+      <p>Correlated color temperature (CCT) is shown in kelvins (K). Lower values, often around 2700–3000 K, appear warmer or more yellow; higher values look cooler or bluer. The exact appearance varies by bulb and by the other light in the room. If the space uses several bulbs at once, similar CCT ratings can help the light feel more consistent.</p>
+      <p>Color rendering is another label worth checking if accurate material and paint colors matter to you. The U.S. Department of Energy describes CRI as one way to quantify color fidelity and says CRI 80 or higher is generally recommended for interior lighting, while 90 or higher indicates excellent fidelity. CRI has limitations, so use it as one comparison point rather than a promise that every color will look identical to daylight. Read the <a href="https://www.energy.gov/cmei/ssl/led-basics" target="_blank" rel="noopener noreferrer">DOE overview of LED color quality</a>.</p>
+      <p>When possible, test one bulb before replacing a whole set. Look at the upholstery, wood, and wall color at the time of day you usually use the room. Choose the appearance you prefer; there is no single color temperature that suits every home.</p>
+      <p>If you are also choosing a palette, see our <a href="/blog/warm-neutral-living-room-aesthetics-color-and-texture-guide">warm-neutral living room color and texture guide</a> for ideas on how light can interact with finishes.</p>
+
+      <h2 id="layer-overhead-task-and-accent-light">Layer Overhead, Task, and Accent Light</h2>
+      <p>Use a ceiling fixture for broad light when you need it, then add a floor or table lamp near a reading seat. A shaded lamp can soften glare, while an adjustable head can direct light onto a page or project. Keep the lamp stable and place its cord where it will not cross a walking route.</p>
+      <p>For accent light, a small lamp on a console or a fixture aimed at artwork can create another point of focus. Avoid aiming bright light directly at a screen or into someone’s eyes. If a fixture allows dimming, it can make the room more adaptable—provided the bulb, dimmer, and fixture are compatible.</p>
+      <p>Use daylight as part of the plan. During the day, open window coverings when privacy and glare allow; after dark, combine only the fixtures you need instead of leaving every light on. The goal is a room that supports different activities, not a fixed designer formula.</p>
+
+      <h2 id="check-fixture-and-dimmer-compatibility">Check Fixture and Dimmer Compatibility</h2>
+      <p>Before buying, check the bulb base, maximum fixture rating, enclosed-fixture suitability, and dimming compatibility on the packaging or maker’s instructions. Not every LED works properly with every dimmer. A mismatched combination can flicker, buzz, or fail to dim through the range you expect. Follow the fixture and bulb manufacturers’ directions; ask a qualified electrician if an installation or wiring change is outside your experience.</p>
+      <p>If you are renting, plug-in lamps are a simple way to add task light without changing wiring. Secure cords along a wall with a suitable cord guide and keep them away from doorways and rugs.</p>
+
+      <h2 id="a-room-by-room-lighting-check">A Simple Living Room Lighting Check</h2>
+      <ul>
+        <li>List the activities that need light and mark their locations.</li>
+        <li>Check bulb brightness in lumens, then choose a comfortable color appearance.</li>
+        <li>Add a nearby lamp for reading or hobbies instead of relying only on overhead light.</li>
+        <li>Check CRI if color appearance matters, and compare bulbs at home before changing every fixture.</li>
+        <li>Confirm that bulbs, fixtures, and dimmers are compatible and keep cords out of walking paths.</li>
+      </ul>
+      <p>Make one change at a time and live with it for an evening. A lamp in the right place or a bulb with a more comfortable color may improve the room more than adding several new fixtures.</p>
+    `,
+  },
+  {
     slug: '10-small-space-decor-ideas-to-maximize-your-apartment',
     title: '10 Small Space Decor Ideas for a More Open Apartment',
     excerpt: 'Practical furniture, storage, and styling ideas for making a compact apartment easier to use.',
