@@ -14,22 +14,22 @@ Local development uses a `mailto:` fallback. A successful local email-draft test
 
 ## Search engine setup
 
-- `astro.config.mjs` declares `https://cozivaraliving.com` as the canonical site origin and the sitemap integration generates a sitemap at build time. Confirm this is the final domain before launch; change the configured origin if the production domain differs.
+- The current production origin is `https://cozivaraliving.netlify.app`. `astro.config.mjs` and the generated `robots.txt` use `PUBLIC_SITE_URL` when supplied and otherwise fall back to that Netlify origin; canonical tags, robots.txt, and the sitemap therefore stay aligned. Set `PUBLIC_SITE_URL` in Netlify if the primary domain changes.
 - **Pending:** Add the domain as a property in Google Search Console. If using HTML-tag verification, copy its exact token to `PUBLIC_GOOGLE_SITE_VERIFICATION` in Netlify's environment variables, then redeploy. DNS TXT verification can instead be completed at the domain host.
-- **Pending:** Submit `https://cozivaraliving.com/sitemap-index.xml` in Search Console after the domain resolves over HTTPS.
+- **Pending:** Add/verify the current `https://cozivaraliving.netlify.app/` URL-prefix property in Search Console, then submit `https://cozivaraliving.netlify.app/sitemap-index.xml`. A property for an older Netlify subdomain does not represent this current origin.
 - The project emits canonical, Open Graph, Twitter, and JSON-LD metadata. Verify a sample production article URL and its featured image after deployment.
 
 ## Google Analytics 4
 
-- **Pending account setup:** Create a GA4 property and Web data stream for `https://cozivaraliving.com`, then copy the real Measurement ID beginning with `G-` from the stream details.
-- Add `PUBLIC_GA_MEASUREMENT_ID` to Netlify's production environment variables and redeploy. The site validates the ID and loads the Google tag only after a visitor chooses “Allow analytics.” “Only necessary” prevents loading; the choice can be changed from Privacy settings in the footer.
+- `netlify.toml` currently configures Measurement ID `G-67MFCBXEKB`. Confirm in GA4 that this ID belongs to the intended Web data stream and update it in Netlify if the stream differs.
+- The site validates the ID and loads the Google tag only after a visitor chooses “Allow analytics.” “Only necessary” prevents loading; the choice can be changed from Privacy settings in the footer. Visits without consent, browser tracking protection, and ad blockers will not appear in GA4.
 - Verify the tag in Google Analytics Realtime or with Tag Assistant after allowing analytics. Do not expect visitors who decline analytics to appear in GA4.
 
 ## Pinterest account and website claim
 
 The Pinterest share buttons link to Pinterest's Pin-creation flow. The header and footer link to the Cozivara Living Pinterest account. The profile URL can be overridden with `PUBLIC_PINTEREST_PROFILE_URL` if the account URL changes.
 
-The Pinterest profile is linked on the site. To claim `cozivaraliving.com`, obtain the verification value from Pinterest, set it in Netlify, and redeploy:
+The Pinterest profile is linked on the site. To claim `cozivaraliving.netlify.app`, obtain the verification value from Pinterest, set it in Netlify, and redeploy:
 
 - `PUBLIC_PINTEREST_VERIFICATION` — the token from Pinterest's HTML-tag verification method. DNS TXT verification is another option and does not require this variable.
 
@@ -54,6 +54,6 @@ The Netlify contact form collects only the name, email address, subject, and mes
 - Confirm the production domain and HTTPS are configured in Netlify/DNS.
 - Verify an actual contact form submission and notification delivery.
 - Add the site's Search Console verification method and submit the sitemap.
-- Create a GA4 property/data stream, add its real Measurement ID to Netlify, and verify events in Realtime after opting in.
+- Confirm the configured GA4 Measurement ID matches the intended property/data stream and verify events in Realtime after opting in.
 - Claim the website in the existing Pinterest account using its real verification token if desired.
 - Complete AdSense review; add the real publisher ID only when issued. Configure consent and Auto ads only when appropriate.

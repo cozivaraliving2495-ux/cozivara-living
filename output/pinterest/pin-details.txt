@@ -7,7 +7,7 @@ Description
 Create a calm, cozy living room with warm ivory and oat tones, washed-linen textures, natural oak, and muted botanical greens. Explore a 60-30-10 neutral palette, layered lighting, and coffee-table styling in this Cozivara Living guide.
 
 Destination URL
-https://cozivaraliving.com/blog/warm-neutral-living-room-aesthetics-color-and-texture-guide/
+https://cozivaraliving.netlify.app/blog/warm-neutral-living-room-aesthetics-color-and-texture-guide/
 
 Alt text
 A warm neutral living room with an ivory sofa, natural oak coffee table, soft linen textures, and muted green plants.
