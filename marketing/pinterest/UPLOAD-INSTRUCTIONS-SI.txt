@@ -1,0 +1,10 @@
+Pinterest එකට manual upload කරන විදිය
+
+1. Pinterest app/site එකේ Create Pin තෝරන්න.
+2. මෙහි තියෙන *-pin.png image එකක් upload කරන්න. එක් Pin එකකට අදාළ copy.txt එක හෝ pinterest-upload-pack.txt එක විවෘත කරන්න.
+3. Title, Description, Destination link සහ Alt text fields වලට අදාළ කොටස් copy/paste කරන්න.
+4. Board එකක් තෝරා Publish කරන්න. අලුත් board එකක් හදනවා නම් copy file එකේ දී ඇති නම භාවිතා කරන්න.
+
+සියලු පින්තූර 1000 × 1500 px vertical 2:3 format එකේ. Links ඔබගේ දැනට ක්‍රියාත්මක Netlify website එකට යන අතර Pinterest organic traffic වෙන්කර හඳුනාගැනීමට UTM parameters ඇතුළත්.
+
+මෙම pack එක සකස් කර ඇත; Pinterest account එකට upload කිරීම සිදු කර නැත.

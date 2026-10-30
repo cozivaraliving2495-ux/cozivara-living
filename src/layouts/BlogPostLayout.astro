@@ -212,6 +212,7 @@ const breadcrumbsSchema = {
 
         <!-- Rich Article HTML Content -->
         <div class="prose-cozi">
+          <!-- Trusted, source-controlled editorial HTML only. Sanitize any future CMS or user-provided content before rendering here. -->
           <Fragment set:html={post.contentHtml} />
         </div>
 

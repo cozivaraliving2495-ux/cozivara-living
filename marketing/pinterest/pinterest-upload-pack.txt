@@ -1,0 +1,88 @@
+COZIVARA LIVING — PINTEREST UPLOAD PACK
+
+Upload each matching PNG, then copy its Board, Title, Description, Destination link, and Alt text into Pinterest. Destination links use the live Netlify site and organic Pinterest tracking parameters.
+
+====================================================================
+PIN: Cozy Bedroom Ideas on a Budget
+Image: cozy-bedroom-budget-pin.png (1000 × 1500 px, vertical 2:3)
+Board: Cozy Bedroom Ideas
+
+Title:
+Cozy Bedroom Ideas on a Budget
+
+Description:
+Create a cozier bedroom on a budget with thoughtful bedding, softer lighting, secondhand finds, and simple bedside organization. Explore practical ideas from Cozivara Living and save this guide for your next bedroom refresh.
+
+Destination link:
+https://cozivaraliving.netlify.app/blog/how-to-create-a-cozy-bedroom-sanctuary-on-a-budget/?utm_source=pinterest&utm_medium=organic&utm_campaign=cozy_bedroom_budget
+
+Alt text:
+Neutral bedroom with a layered bed, upholstered bench, bedside tables, and warm pendant lights. Text overlay reads “Cozy Bedroom Ideas on a Budget.” Cozivara Living branding appears at the bottom.
+
+====================================================================
+PIN: Simple Home Organization Ideas
+Image: minimalist-home-organization-pin.png (1000 × 1500 px, vertical 2:3)
+Board: Home Organization Ideas
+
+Title:
+Simple Home Organization Ideas
+
+Description:
+Looking for a calmer, more organized home? Explore practical ideas for pantry zones, closet decluttering, and short daily reset routines. These flexible tips from Cozivara Living help you choose systems that fit your space and habits.
+
+Destination link:
+https://cozivaraliving.netlify.app/blog/minimalist-home-organization-hacks-for-a-clutter-free-space/?utm_source=pinterest&utm_medium=organic&utm_campaign=minimalist_home_organization
+
+Alt text:
+Modern kitchen with dark cabinets, open counters, and wood flooring. Text overlay reads “Simple Home Organization Ideas.” Cozivara Living branding appears at the bottom.
+
+====================================================================
+PIN: Warm Neutral Living Room Ideas
+Image: warm-neutral-living-room-pin.png (1000 × 1500 px, vertical 2:3)
+Board: Warm Neutral Living Room Ideas
+
+Title:
+Warm Neutral Living Room Ideas
+
+Description:
+Explore a warm neutral living room palette with ivory, linen-like textures, natural wood, and botanical green accents. Get approachable color and texture ideas from Cozivara Living for a relaxed, layered look.
+
+Destination link:
+https://cozivaraliving.netlify.app/blog/warm-neutral-living-room-aesthetics-color-and-texture-guide/?utm_source=pinterest&utm_medium=organic&utm_campaign=warm_neutral_living_room
+
+Alt text:
+Warm contemporary living room with a neutral sofa, wood coffee table, soft rug, and green accents. Text overlay reads “Warm Neutral Living Room Ideas.” Cozivara Living branding appears at the bottom.
+
+====================================================================
+PIN: Japandi-Inspired Room Ideas
+Image: japandi-inspired-room-ideas-pin.png (1000 × 1500 px, vertical 2:3)
+Board: Japandi Style & Minimalist Interiors
+
+Title:
+Japandi-Inspired Room Ideas
+
+Description:
+Explore Japandi-inspired ideas centered on simple furniture forms, natural materials, and comfortable, practical spaces. Cozivara Living shares a thoughtful starting point for bringing a calm, edited feel to your room.
+
+Destination link:
+https://cozivaraliving.netlify.app/blog/5-japandi-living-room-elements-for-tranquil-spaces/?utm_source=pinterest&utm_medium=organic&utm_campaign=japandi_inspired_room_ideas
+
+Alt text:
+Wall shelves with framed botanical art, small plants, and simple decor. Text overlay reads “Japandi-Inspired Room Ideas.” Cozivara Living branding appears at the bottom.
+
+====================================================================
+PIN: 7 Indoor Plants for Neutral Homes
+Image: indoor-plants-neutral-homes-pin.png (1000 × 1500 px, vertical 2:3)
+Board: Indoor Plants & Home Decor
+
+Title:
+7 Indoor Plants for Neutral Homes
+
+Description:
+See how indoor greenery can add color and texture to neutral interiors. This guide explores seven plant varieties, styling ideas, and care notes; choose plants based on your home’s light, available space, and the needs of each variety.
+
+Destination link:
+https://cozivaraliving.netlify.app/blog/indoor-plants-that-elevate-neutral-home-interiors/?utm_source=pinterest&utm_medium=organic&utm_campaign=indoor_plants_neutral_homes
+
+Alt text:
+Upright green snake plant in a white pot against a pale neutral background. Text overlay reads “7 Indoor Plants for Neutral Homes.” Cozivara Living branding appears at the bottom.

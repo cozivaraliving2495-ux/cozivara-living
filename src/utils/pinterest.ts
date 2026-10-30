@@ -1,4 +1,4 @@
-const DEFAULT_PINTEREST_PROFILE_URL = 'https://www.pinterest.com/cozivaraliving2495/_profile/';
+const DEFAULT_PINTEREST_PROFILE_URL = 'https://www.pinterest.com/cozivaraliving2495/';
 
 export function getPinterestProfileUrl(configuredUrl?: string): string | undefined {
   const profileUrl = configuredUrl?.trim() || DEFAULT_PINTEREST_PROFILE_URL;
@@ -18,7 +18,7 @@ export function getPinterestProfileUrl(configuredUrl?: string): string | undefin
       !candidate.search &&
       !candidate.hash
     ) {
-      return candidate.href;
+      return `https://www.pinterest.com/${pathParts[0]}/`;
     }
   } catch {
     // Keep malformed configuration from producing a broken external link.
