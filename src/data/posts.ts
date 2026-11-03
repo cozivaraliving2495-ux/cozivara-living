@@ -721,5 +721,245 @@ export const POSTS: BlogPost[] = [
       </ol>
       <p>By curating healthy, sculptural greenery in planters that suit your room, you can add color, texture, and a living element to a neutral interior.</p>
     `
+  },
+  {
+    slug: 'how-to-arrange-living-room-furniture-for-better-flow',
+    title: 'How to Arrange Living Room Furniture for Better Flow',
+    excerpt: 'Plan a comfortable living room around its focal point, real furniture measurements, conversation, and clear paths through the space.',
+    category: 'Lifestyle',
+    categorySlug: 'lifestyle',
+    categoryBadgeBg: 'bg-[#F2ECE6]',
+    categoryBadgeText: 'text-[#6C5345]',
+    publishDate: 'Nov 3, 2026',
+    readTime: '7 min read',
+    author: DEFAULT_AUTHOR,
+    featuredImage: '/images/articles/living-room-furniture-flow.webp',
+    pinImage: '/images/pinterest/living-room-furniture-flow.jpg',
+    imageAlt: 'Neutral living room with sofa seating and a coffee table, illustrating a furniture-flow layout.',
+    pinterestDescription: 'A practical living room furniture layout guide: find a focal point, map conversation seating, and keep everyday walkways clear.',
+    headings: [
+      { depth: 2, slug: 'start-with-the-room-not-the-sofa', text: 'Start With the Room, Not the Sofa' },
+      { depth: 2, slug: 'choose-a-focal-point', text: 'Choose a Focal Point' },
+      { depth: 2, slug: 'make-conversation-comfortable', text: 'Make Conversation Comfortable' },
+      { depth: 2, slug: 'protect-walkways-and-door-swings', text: 'Protect Walkways and Door Swings' },
+      { depth: 2, slug: 'adapt-the-layout-to-your-room', text: 'Adapt the Layout to Your Room' },
+      { depth: 2, slug: 'a-layout-check-before-you-rearrange', text: 'A Layout Check Before You Rearrange' },
+    ],
+    contentHtml: `
+      <p>A living room can look beautiful in a photo and still feel awkward to use. A useful layout supports the way people enter, sit, talk, watch a screen, and move through the room. Start with the room’s fixed features and your daily routines, then fit the furniture around them.</p>
+
+      <h2 id="start-with-the-room-not-the-sofa">Start With the Room, Not the Sofa</h2>
+      <p>Measure the room, including alcoves, radiators, built-ins, windows, and door openings. Note which doors swing into the space and where outlets are located. Measure each furniture piece at its widest points, including the depth of recliners or chairs when they are in use.</p>
+      <p>Sketch a simple floor plan or mark furniture footprints with painter’s tape. Leave enough room to open doors, reach a window, and use drawers or cabinets. A taped outline is easier to adjust than a heavy sofa.</p>
+
+      <h2 id="choose-a-focal-point">Choose a Focal Point</h2>
+      <p>Decide what should anchor the seating area: a fireplace, a large window, artwork, a view, or a television. A focal point gives the main seats a clear orientation, but it does not have to dictate that every chair sits in a straight row.</p>
+      <p>In a room with a television, test the viewing angle from the seats people actually use. If the fireplace or view matters just as much, angle a chair or create a second small seating position so the room can serve more than one purpose.</p>
+
+      <h2 id="make-conversation-comfortable">Make Conversation Comfortable</h2>
+      <p>Arrange the main sofa and chairs so people can see one another without twisting uncomfortably. A pair of chairs across from a sofa can work in a rectangular room; in a narrower room, one chair beside the sofa may leave a more natural passage.</p>
+      <p>Check the distance between seats and the coffee table by sitting down and standing up. The table should be reachable without blocking knees or the route around the seating group. There is no single spacing formula that suits every furniture scale, so use a temporary setup and adjust it in person.</p>
+      <p>For a cohesive seating area, compare the furniture footprint with the rug before moving everything. Our <a href="/blog/how-to-choose-the-right-living-room-rug-size-and-placement/">living room rug size and placement guide</a> explains how to test rug outlines and keep edges clear.</p>
+
+      <h2 id="protect-walkways-and-door-swings">Protect Walkways and Door Swings</h2>
+      <p>Trace the routes people take from the entry to the sofa, hallway, kitchen, or patio door. Keep those paths easy to follow, and avoid placing a table corner where someone naturally cuts through. Check the route with the room in normal use, not only from the doorway.</p>
+      <p>Open doors fully and pull out drawers before deciding that a layout fits. Keep cords out of the path and secure rugs that shift underfoot. A clear route often matters more than squeezing in another occasional chair.</p>
+
+      <h2 id="adapt-the-layout-to-your-room">Adapt the Layout to Your Room</h2>
+      <p><strong>For a small room:</strong> Choose fewer appropriately scaled pieces, use a chair that can move when needed, and preserve one clear route through the space. A sofa does not always need to sit against a wall; compare a floated arrangement if it creates a better path or defines a shared living area.</p>
+      <p><strong>For a long room:</strong> Consider two connected zones, such as a primary conversation area and a reading chair. Use a rug, lighting, or a console to make the zones feel intentional while keeping a continuous route between them.</p>
+      <p><strong>For an open plan:</strong> Let the back of a sofa help define the living area, then check the transition to dining or kitchen seating. Keep the zones visually related with a shared color or wood finish rather than matching every item.</p>
+
+      <h2 id="a-layout-check-before-you-rearrange">A Layout Check Before You Rearrange</h2>
+      <ul>
+        <li>Measure the room, furniture, door swings, and major routes.</li>
+        <li>Pick the feature that should guide the main seating direction.</li>
+        <li>Mark a trial plan with tape and test it by walking, sitting, and opening storage.</li>
+        <li>Check sightlines, table reach, outlets, lighting, and rug edges.</li>
+        <li>Remove one piece if the room feels crowded; negative space is useful.</li>
+      </ul>
+      <p>Give a new arrangement a few days before making final changes. Notice where people naturally sit and walk, then adjust the plan to fit your household. A successful layout is one that feels calm and works in real life.</p>
+    `
+  },
+  {
+    slug: 'how-to-choose-curtains-and-window-treatments',
+    title: 'How to Choose Curtains and Window Treatments for Any Room',
+    excerpt: 'Compare curtain length, fabric, light control, privacy, and layering so your window treatments suit the room and the way you use it.',
+    category: 'Lifestyle',
+    categorySlug: 'lifestyle',
+    categoryBadgeBg: 'bg-[#F2ECE6]',
+    categoryBadgeText: 'text-[#6C5345]',
+    publishDate: 'Nov 3, 2026',
+    readTime: '7 min read',
+    author: DEFAULT_AUTHOR,
+    featuredImage: '/images/articles/curtains-window-treatment-guide.webp',
+    pinImage: '/images/pinterest/curtains-window-treatment-guide.jpg',
+    imageAlt: 'Soft neutral bedroom with full-height curtains beside a window.',
+    pinterestDescription: 'Choose curtains with confidence: measure the window, decide on privacy and light control, and compare fabric and hanging styles.',
+    headings: [
+      { depth: 2, slug: 'decide-what-the-window-needs', text: 'Decide What the Window Needs' },
+      { depth: 2, slug: 'measure-before-you-shop', text: 'Measure Before You Shop' },
+      { depth: 2, slug: 'choose-fabric-and-opacity', text: 'Choose Fabric and Opacity' },
+      { depth: 2, slug: 'use-layers-for-flexibility', text: 'Use Layers for Flexibility' },
+      { depth: 2, slug: 'make-the-finish-fit-the-room', text: 'Make the Finish Fit the Room' },
+      { depth: 2, slug: 'window-treatment-checklist', text: 'Window Treatment Checklist' },
+    ],
+    contentHtml: `
+      <p>Curtains can soften a room, frame a view, add privacy, or help manage daylight. The right choice depends on the window, the room’s use, and how much light you want to keep or block. Measure first, then compare fabric and hardware against those needs.</p>
+
+      <h2 id="decide-what-the-window-needs">Decide What the Window Needs</h2>
+      <p>Start with the job. A bedroom may need privacy and a darker sleeping environment; a living room may benefit from filtered daylight; a street-facing room may need coverage after dark. Consider glare on a screen, views into neighboring homes, and whether the window is used for ventilation.</p>
+      <p>Also consider the window itself. Check whether a treatment could interfere with a crank, lock, radiator, vent, or door. If the window is difficult to reach, choose an operating style you can use comfortably.</p>
+
+      <h2 id="measure-before-you-shop">Measure Before You Shop</h2>
+      <p>Measure the window width and height, then decide where the rod or track can be mounted. Record the mounting width, the distance from the mounting point to the floor or sill, and any trim or obstructions. Follow the hardware maker’s installation instructions and make sure the wall or frame can support the selected hardware.</p>
+      <p>Mounting a rod wider than the window can let panels stack beside the glass when open, if the wall space allows. Hanging higher can draw the eye upward, but check the ceiling, trim, and panel length before drilling. For a tailored look, many people prefer panels that meet the floor; in a high-traffic area, a shorter or just-clear-of-floor finish may be easier to maintain.</p>
+      <p>Panel fullness depends on fabric thickness and the look you want. Read the package’s coverage guidance and check whether it lists the width of one panel or the pair. Do not assume a single panel will cover the full window when closed.</p>
+
+      <h2 id="choose-fabric-and-opacity">Choose Fabric and Opacity</h2>
+      <p><strong>Sheer fabric</strong> softens direct views and bright light but usually offers limited privacy at night when the room is lit. <strong>Light-filtering fabric</strong> can diffuse daylight while providing more coverage. <strong>Room-darkening or blackout options</strong> can reduce incoming light, though performance depends on the fabric, fit, and gaps around the window.</p>
+      <p>Bring fabric samples home when possible. View them in morning and evening light beside the wall, flooring, and upholstery. A warm white can look yellow beside a cool white wall, and textured fabric can appear heavier when gathered at the sides.</p>
+
+      <h2 id="use-layers-for-flexibility">Use Layers for Flexibility</h2>
+      <p>A shade or blind paired with side panels allows separate control of privacy and softness. For example, a shade can cover the glass during the day while decorative panels frame the window. Confirm that both treatments fit without colliding with handles or each other.</p>
+      <p>Window coverings may also affect comfort and energy use, but results vary by window, climate, product, and how the treatment is operated. The U.S. Department of Energy notes that blinds, curtains, and shades can help limit summer sun and retain warmth in winter. See its <a href="https://www.energy.gov/articles/5-tips-energy-saving-renters" target="_blank" rel="noopener noreferrer">energy-saving tips for renters</a>. Treat this as a possible benefit, not a guaranteed bill reduction.</p>
+
+      <h2 id="make-the-finish-fit-the-room">Make the Finish Fit the Room</h2>
+      <p>For a calm interior, choose a fabric that relates to the wall or upholstery and add texture through linen-like weaves, subtle stripes, or a soft tonal pattern. In a simple room, a stronger color or print can make the window a feature. Repeat one color elsewhere—such as in a cushion or artwork—to make the choice feel considered.</p>
+      <p>Keep care practical. Check washing or dry-cleaning instructions, sun exposure, and whether the fabric may shrink. In a home with children or pets, keep cords and long fabric safely arranged and follow the treatment manufacturer’s safety guidance.</p>
+
+      <h2 id="window-treatment-checklist">Window Treatment Checklist</h2>
+      <ul>
+        <li>Decide how much privacy, daylight, and glare control the room needs.</li>
+        <li>Measure the window, mounting area, and finished panel length.</li>
+        <li>Check panel coverage, hardware limits, and obstructions before ordering.</li>
+        <li>Compare samples in the room at different times of day.</li>
+        <li>Confirm care instructions, operating access, and safe cord arrangement.</li>
+      </ul>
+      <p>Thoughtful window treatments balance appearance with everyday function. A few careful measurements and a fabric sample can prevent the most common mismatch: a beautiful panel that does not provide the coverage, light, or clearance the room needs.</p>
+    `
+  },
+  {
+    slug: 'small-dining-room-layout-ideas-that-feel-open',
+    title: 'Small Dining Room Layout Ideas That Feel Open and Comfortable',
+    excerpt: 'Make a compact dining area work with a right-sized table, flexible seating, clear chair movement, and lighting that defines the zone.',
+    category: 'Small Spaces',
+    categorySlug: 'small-spaces',
+    categoryBadgeBg: 'bg-[#EEF2EC]',
+    categoryBadgeText: 'text-[#485540]',
+    publishDate: 'Nov 3, 2026',
+    readTime: '6 min read',
+    author: DEFAULT_AUTHOR,
+    featuredImage: '/images/articles/small-dining-room-layout-guide.webp',
+    pinImage: '/images/pinterest/small-dining-room-layout-guide.jpg',
+    imageAlt: 'Modern home interior with warm wood flooring, used as the backdrop for a small dining-layout planning guide.',
+    pinterestDescription: 'Plan a small dining room around the table, chair pull-out space, and everyday routes. Includes flexible seating and lighting ideas.',
+    headings: [
+      { depth: 2, slug: 'map-the-dining-zone-first', text: 'Map the Dining Zone First' },
+      { depth: 2, slug: 'choose-a-table-for-your-routine', text: 'Choose a Table for Your Routine' },
+      { depth: 2, slug: 'make-seating-flexible', text: 'Make Seating Flexible' },
+      { depth: 2, slug: 'keep-storage-and-decor-light', text: 'Keep Storage and Decor Light' },
+      { depth: 2, slug: 'use-lighting-to-define-the-area', text: 'Use Lighting to Define the Area' },
+      { depth: 2, slug: 'small-dining-room-planning-list', text: 'Small Dining Room Planning List' },
+    ],
+    contentHtml: `
+      <p>A small dining area can still feel welcoming and easy to use. The key is to plan around the table and the movement it requires, rather than choosing furniture by appearance alone. A simple layout test can show whether chairs, doors, and daily routes have enough room.</p>
+
+      <h2 id="map-the-dining-zone-first">Map the Dining Zone First</h2>
+      <p>Measure the whole area and note doors, kitchen cabinets, windows, and the path people take through the room. Mark the table footprint with painter’s tape, then add space for chairs to move back. Test the outline by sitting, standing, and walking around it.</p>
+      <p>If the dining area shares a room with a living space, decide where one zone ends and the next begins. A rug, pendant light, or consistent table placement can define the dining area without adding a tall divider that makes the room feel closed.</p>
+
+      <h2 id="choose-a-table-for-your-routine">Choose a Table for Your Routine</h2>
+      <p>Choose a shape that fits both the room and the way you eat. A round table can make it easier to move around a tight corner because it has no corners to bump into, while a narrow rectangular table may fit along a wall or in a long room. The best choice depends on the measured layout, not a universal rule.</p>
+      <p>An extendable table can support occasional guests while taking up less space on ordinary days. Check where the leaves will be stored and test the expanded footprint before buying. If you use the table for work or projects, consider the clear surface area you need in addition to the number of seats.</p>
+
+      <h2 id="make-seating-flexible">Make Seating Flexible</h2>
+      <p>Use only as many chairs as the everyday layout comfortably supports. A bench can tuck under one side when not in use, and lightweight chairs can move between the dining and living areas. Compare seat width and table leg placement; a pedestal base may make it easier to position chairs, but confirm that the base does not interfere with feet.</p>
+      <p>Before committing, pull each chair out and walk behind it. Check that a nearby door can open and that people can reach their seats without moving another chair. Keep at least one route through a shared space easy to use.</p>
+
+      <h2 id="keep-storage-and-decor-light">Keep Storage and Decor Light</h2>
+      <p>Use wall-mounted shelves or a shallow cabinet only where they do not narrow a route or block a door. Store table linens and serving pieces close to where you use them, but avoid filling every wall with storage. A small room often benefits from one useful storage piece and a few open surfaces.</p>
+      <p>Keep the tabletop visually simple for daily use. A low centerpiece, small vase, or tray can add character without taking up the space needed for meals. When the table is not in use, clear it so the room feels ready for its next purpose.</p>
+
+      <h2 id="use-lighting-to-define-the-area">Use Lighting to Define the Area</h2>
+      <p>A pendant or ceiling fixture centered over the table can help the dining area feel intentional. Check the fixture’s scale against the table and make sure it does not obstruct sightlines or feel too low for people moving around the room. If rewiring is not practical, a floor or wall light nearby can add warmth without a construction project.</p>
+      <p>Layer ambient light with a smaller lamp or dimmable fixture if your existing setup allows it. Warm, comfortable light can make a compact dining nook feel distinct from a kitchen work area, while daylight remains useful during daytime meals.</p>
+
+      <h2 id="small-dining-room-planning-list">Small Dining Room Planning List</h2>
+      <ul>
+        <li>Measure the dining zone, chair movement, doors, and traffic routes.</li>
+        <li>Test the table outline with tape, including its extended size if applicable.</li>
+        <li>Choose seats that can tuck in, move easily, or serve more than one room.</li>
+        <li>Keep storage shallow and decor easy to clear from the tabletop.</li>
+        <li>Check lighting height, sightlines, and the feel of the room after dark.</li>
+      </ul>
+      <p>Take your measurements when comparing tables and chairs. A compact dining setup feels generous when the furniture fits the routine and the route through the room remains simple.</p>
+    `
+  },
+  {
+    slug: 'forest-inspired-home-decor',
+    title: 'Forest-Inspired Home Decor: Bring Nature Into Your Space',
+    excerpt: 'Explore forest-inspired home decor with deep greens, warm wood, botanical details, and tactile layers that make a room feel grounded and personal.',
+    category: 'Lifestyle',
+    categorySlug: 'lifestyle',
+    categoryBadgeBg: 'bg-[#F2ECE6]',
+    categoryBadgeText: 'text-[#6C5345]',
+    publishDate: 'Nov 3, 2026',
+    readTime: '7 min read',
+    author: DEFAULT_AUTHOR,
+    featuredImage: '/images/articles/forest-themed-home-decor.webp',
+    pinImage: '/images/pinterest/forest-themed-home-decor.jpg',
+    imageAlt: 'A potted succulent used as an editorial accent for forest-inspired home decor.',
+    pinterestDescription: 'Bring a forest-inspired mood home with layered greens, warm wood, botanical patterns, and a few natural textures. This practical styling guide keeps the look balanced and livable.',
+    headings: [
+      { depth: 2, slug: 'what-forest-inspired-decor-means', text: 'What Forest-Inspired Decor Means' },
+      { depth: 2, slug: 'build-a-grounded-green-palette', text: 'Build a Grounded Green Palette' },
+      { depth: 2, slug: 'layer-natural-looking-textures', text: 'Layer Natural-Looking Textures' },
+      { depth: 2, slug: 'add-botanical-details-with-restraint', text: 'Add Botanical Details With Restraint' },
+      { depth: 2, slug: 'bring-in-greenery-that-suits-the-room', text: 'Bring in Greenery That Suits the Room' },
+      { depth: 2, slug: 'make-the-look-work-in-a-rental-or-small-home', text: 'Make the Look Work in a Rental or Small Home' },
+      { depth: 2, slug: 'forest-inspired-decor-checklist', text: 'Forest-Inspired Decor Checklist' },
+    ],
+    contentHtml: `
+      <p>Forest-inspired home decor brings together leafy greens, earthy colors, wood tones, botanical patterns, and tactile materials. The goal is not to turn a room into a themed set. A few considered references to the outdoors can give a home a more layered, collected feeling while keeping it comfortable for everyday life.</p>
+      <p>Pinterest Trends recently highlighted “Forest-themed Home Decor” for U.S. audiences. Pinterest says its trend views draw on searches, Pin saves, and other platform activity. Those signals can change over time, so treat a trend spotlight as inspiration rather than a promise of reach. See <a href="https://trends.pinterest.com/?country=US&trendsPreset=1" target="_blank" rel="noopener noreferrer">Pinterest Trends for the United States</a>.</p>
+
+      <h2 id="what-forest-inspired-decor-means">What Forest-Inspired Decor Means</h2>
+      <p>Think of forest style as a palette and a set of natural references, rather than a checklist of woodland objects. It can feel quiet and minimal with one deep-green accent, or more expressive with botanical prints, vintage-looking art, woven details, and varied greenery.</p>
+      <p>Choose the mood first. A calmer room might use olive, moss, cream, and light oak. A richer version could pair pine or deep green with walnut-colored wood, a warm neutral, and one muted rust or brass detail. Keep large surfaces and fixed pieces in colors you will still enjoy if the trend shifts.</p>
+
+      <h2 id="build-a-grounded-green-palette">Build a Grounded Green Palette</h2>
+      <p>Start with one main green, one supporting neutral, and a wood tone already present in the room. Collect paint or fabric samples and compare them beside your flooring, sofa, and trim in both daylight and evening light. Green can read cooler or warmer depending on the light and nearby colors.</p>
+      <p>If you are unsure about a strong wall color, bring the palette in through a pillow, throw, lamp shade, artwork, or a painted piece of furniture. Repeating the accent in two or three places can make it feel intentional without covering every surface.</p>
+
+      <h2 id="layer-natural-looking-textures">Layer Natural-Looking Textures</h2>
+      <p>Mix a few different surface qualities: smooth wood, soft cotton or linen, a woven basket, matte pottery, or a nubby cushion. Keep the palette fairly edited so the textures add interest without making the room feel busy. A simple starting point is to combine one smooth surface, one soft fabric, and one woven or irregular detail.</p>
+      <p>Read care labels before choosing materials for a high-use area. Natural fibers and finishes vary in durability and cleaning needs, and a material described as natural is not automatically the easiest choice for every household.</p>
+
+      <h2 id="add-botanical-details-with-restraint">Add Botanical Details With Restraint</h2>
+      <p>Botanical art, leaf-patterned fabric, a branch in a vase, or a landscape print can carry the theme without adding lots of small decorations. Pick one stronger botanical feature, then let quieter details support it. For example, a large leaf print can sit beside plain cushions and a wood frame rather than competing with several other patterns.</p>
+      <p>Vary scale: pair one larger artwork or patterned textile with smaller, simpler accents. If you are building a gallery wall, repeat a color or frame finish to tie different images together.</p>
+
+      <h2 id="bring-in-greenery-that-suits-the-room">Bring in Greenery That Suits the Room</h2>
+      <p>One healthy plant can add a living accent, but choose it for the conditions you can provide. Check the light near its intended spot, how much care it needs, and how large it may grow. Our <a href="/blog/indoor-plants-that-elevate-neutral-home-interiors/">indoor plant styling guide</a> includes care notes and references for several varieties; use plant-specific advice rather than assuming every plant has the same needs.</p>
+      <p>Use a planter that relates to the room’s materials, and protect the surface beneath it from water. If children or pets share the home, check a reliable species-specific safety source before bringing a plant indoors and place it where it cannot be chewed or knocked over.</p>
+
+      <h2 id="make-the-look-work-in-a-rental-or-small-home">Make the Look Work in a Rental or Small Home</h2>
+      <p>Renters can start with removable changes such as art, textiles, table lamps, and freestanding planters. Use wall treatments only when allowed by the lease and suitable for the surface. In a small room, avoid filling every corner with plants or baskets; keep the route through the space clear and let one accent carry the theme.</p>
+      <p>For a living room, try a green cushion with warm wood and a botanical print. In an entry, a small tray, framed landscape, and one sturdy plant can create a welcoming moment. At a dining table, a simple branch arrangement or leaf-toned linens can add the look without permanent changes.</p>
+
+      <h2 id="forest-inspired-decor-checklist">Forest-Inspired Decor Checklist</h2>
+      <ul>
+        <li>Choose one green, one neutral, and one wood tone to guide the palette.</li>
+        <li>Test paint and fabric samples in the actual room before buying more.</li>
+        <li>Combine a few tactile materials and keep the number of patterns manageable.</li>
+        <li>Use botanical art or one plant as a focal detail rather than filling every surface.</li>
+        <li>Check care, cleaning, water protection, and household safety before choosing materials or plants.</li>
+      </ul>
+      <p>Forest-inspired decor works best when it reflects the people who live there. Use the current trend as a starting point, then keep the colors, furniture, and textures that feel comfortable in your own home.</p>
+    `
   }
 ];
+
+// Keep the newest editorial dates first so the home page and blog lead with current posts.
+POSTS.sort((a, b) => Date.parse(b.publishDate) - Date.parse(a.publishDate) || (a.slug === 'forest-inspired-home-decor' ? -1 : b.slug === 'forest-inspired-home-decor' ? 1 : 0));
