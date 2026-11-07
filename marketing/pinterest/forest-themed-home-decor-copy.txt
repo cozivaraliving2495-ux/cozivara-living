@@ -13,10 +13,14 @@ SUGGESTED BOARD
 Forest & Botanical Home Decor
 
 ALT TEXT
-A small potted succulent on a pale background, used as an editorial accent for forest-inspired home decor.
+Forest-green sofa, leafy plant, and warm neutral finishes in a living room. Text overlay reads “Forest Green at Home.”
 
 KEYWORDS
 forest-themed home decor, woodland home decor, botanical decor, forest green room, nature-inspired interiors
 
 IMAGE
-public/images/pinterest/forest-themed-home-decor.jpg (1000 × 1500 px)
+public/images/pinterest/forest-themed-home-decor-fresh.jpg (1000 × 1500 px)
+
+PHOTO CREDIT
+Dan LeFebvre on Unsplash
+https://unsplash.com/photos/a-living-room-with-two-couches-and-a-coffee-table-ghUf8UzTK8g

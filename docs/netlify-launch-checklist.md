@@ -15,13 +15,15 @@ Local development uses a `mailto:` fallback. A successful local email-draft test
 ## Search engine setup
 
 - The current production origin is `https://cozivaraliving.netlify.app`. `astro.config.mjs` and the generated `robots.txt` use `PUBLIC_SITE_URL` when supplied and otherwise fall back to that Netlify origin; canonical tags, robots.txt, and the sitemap therefore stay aligned. Set `PUBLIC_SITE_URL` in Netlify if the primary domain changes.
-- **Pending:** Add the domain as a property in Google Search Console. If using HTML-tag verification, copy its exact token to `PUBLIC_GOOGLE_SITE_VERIFICATION` in Netlify's environment variables, then redeploy. DNS TXT verification can instead be completed at the domain host.
-- **Pending:** Add/verify the current `https://cozivaraliving.netlify.app/` URL-prefix property in Search Console, then submit `https://cozivaraliving.netlify.app/sitemap-index.xml`. A property for an older Netlify subdomain does not represent this current origin.
+- **Verified Nov 8, 2026:** Search Console contains the current `https://cozivaraliving.netlify.app/` URL-prefix property. `/sitemap-index.xml` is submitted with **Success** status; Google last read it Nov 3, 2026 and reported 24 discovered pages. The previous property for `soft-speculoos-00d35e.netlify.app` is a different hostname and should not be used for this site.
+- **Pending:** Add/verify the same current site in Bing Webmaster Tools and submit `https://cozivaraliving.netlify.app/sitemap-index.xml`. If Bing provides HTML-tag verification, copy only its `content` value to Netlify's `PUBLIC_BING_SITE_VERIFICATION` environment variable and redeploy. The site emits Bing's `msvalidate.01` meta tag when that variable is set. The sitemap is already discoverable from `/robots.txt`; account verification is needed to inspect Bing's crawl and indexing reports.
 - The project emits canonical, Open Graph, Twitter, and JSON-LD metadata. Verify a sample production article URL and its featured image after deployment.
+
+The site itself is served over HTTPS for standard browsers such as Chrome and Edge. Search visibility is controlled by search engines, not browser settings. Bing may crawl the sitemap, but submitting it does not guarantee that every URL will appear in search results.
 
 ## Google Analytics 4
 
-- `netlify.toml` currently configures Measurement ID `G-67MFCBXEKB`. Confirm in GA4 that this ID belongs to the intended Web data stream and update it in Netlify if the stream differs.
+- `netlify.toml` configures Measurement ID `G-67MFCBXEKB`. GA4's Search Console integration is linked to the current URL-prefix property and web stream `Cozivara Living Website` (stream ID `16214041722`). The GA4 Home report showed zero sessions/views for Nov 8, 2026 at the time of review.
 - The site validates the ID and loads the Google tag only after a visitor chooses “Allow analytics.” “Only necessary” prevents loading; the choice can be changed from Privacy settings in the footer. Visits without consent, browser tracking protection, and ad blockers will not appear in GA4.
 - Verify the tag in Google Analytics Realtime or with Tag Assistant after allowing analytics. Do not expect visitors who decline analytics to appear in GA4.
 
@@ -53,7 +55,7 @@ The Netlify contact form collects only the name, email address, subject, and mes
 
 - Confirm the production domain and HTTPS are configured in Netlify/DNS.
 - Verify an actual contact form submission and notification delivery.
-- Add the site's Search Console verification method and submit the sitemap.
-- Confirm the configured GA4 Measurement ID matches the intended property/data stream and verify events in Realtime after opting in.
+- Inspect Search Console Pages/URL Inspection for any excluded or not-yet-indexed URLs; the sitemap itself is already successful.
+- Verify a fresh GA4 event in Realtime after the site visitor explicitly opts in to analytics. The site intentionally does not load GA until consent is granted.
 - Claim the website in the existing Pinterest account using its real verification token if desired.
 - Complete AdSense review; add the real publisher ID only when issued. Configure consent and Auto ads only when appropriate.

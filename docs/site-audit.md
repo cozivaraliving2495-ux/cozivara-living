@@ -1,5 +1,17 @@
 # Cozivara Living audit and fact-check report
 
+## Audit update - November 8, 2026
+
+- Read-only production checks returned HTTP 200 for `/`, `/robots.txt`, `/sitemap-index.xml`, and the existing `/blog/forest-inspired-home-decor/` page. The production homepage canonical points to `https://cozivaraliving.netlify.app/`, and `robots.txt` references the sitemap index on that same host.
+- Google Search Console was checked in the signed-in browser on Nov 8: the selected property is the current `https://cozivaraliving.netlify.app/` URL-prefix. Its submitted `/sitemap-index.xml` status is **Success**, last read Nov 3, with 24 discovered pages. The older `soft-speculoos-00d35e.netlify.app` property is a separate host and should not be used for this site.
+- Search Console's 28-day country report (Oct 29–Nov 5; last updated 4.5 hours before review) showed 3 clicks, 28 impressions, 10.7% CTR, and average position 28.7. The United States contributed 14 impressions and 1 click; Sri Lanka had 2 impressions and 2 clicks. These are low totals, but they confirm Google is already recording impressions and clicks.
+- GA4's Search Console integration is linked to the correct current property and web stream `Cozivara Living Website` (stream ID `16214041722`). GA4 Home showed 0 sessions and 0 views for Nov 8 at review time. The configured tag loads only after a visitor chooses “Allow analytics”; consent denials, tracking protection, ad blockers, and reporting delay can all make GA4 lower than Netlify request analytics. No permission or consent behavior was changed.
+- Two new article routes and their local photos/pins were added. The production versions returned 404 during this audit because these edits have not been deployed yet. After deployment, check both article URLs and resubmit the sitemap in the verified Search Console property.
+- Bing readiness: the production `robots.txt` already exposes the sitemap. Optional `PUBLIC_BING_SITE_VERIFICATION` support is now available for the Bing Webmaster Tools HTML verification token. Account verification and sitemap submission still require the owner's Bing Webmaster Tools account.
+- Search results are not guaranteed by sitemap or URL submission. Review crawl/index status in each verified webmaster account after deployment.
+- Signed-in Google Analytics, Search Console, and Pinterest pages were inspected in the user's open Chrome session for this update. No Bing Webmaster Tools or Netlify account settings were opened. Pinterest profile showed 1.6k monthly views and 10 followers during the check; existing organic Pins had impressions and some clicks, but no saves on the displayed profile list.
+- Local build: **passed**, 27 pages generated. Both new article routes were generated with canonicals, absolute BlogPosting image URLs, index/follow directives, and sitemap entries.
+
 Audit date: October 25, 2026
 Project: existing Astro site in this repository
 

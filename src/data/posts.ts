@@ -1,3 +1,5 @@
+import { FEATURED_POSTS } from './featured-posts';
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -16,6 +18,7 @@ export interface BlogPost {
   };
   featuredImage: string;
   pinImage?: string;
+  imageCredit?: { name: string; photoUrl: string };
   imageAlt: string;
   headings: { depth: number; slug: string; text: string }[];
   contentHtml: string;
@@ -907,9 +910,13 @@ export const POSTS: BlogPost[] = [
     publishDate: 'Nov 3, 2026',
     readTime: '7 min read',
     author: DEFAULT_AUTHOR,
-    featuredImage: '/images/articles/forest-themed-home-decor.webp',
-    pinImage: '/images/pinterest/forest-themed-home-decor.jpg',
-    imageAlt: 'A potted succulent used as an editorial accent for forest-inspired home decor.',
+    featuredImage: '/images/articles/forest-themed-home-decor-fresh.webp',
+    pinImage: '/images/pinterest/forest-themed-home-decor-fresh.jpg',
+    imageAlt: 'Forest-green sofa, leafy plant, and warm neutral finishes in a living room.',
+    imageCredit: {
+      name: 'Dan LeFebvre',
+      photoUrl: 'https://unsplash.com/photos/a-living-room-with-two-couches-and-a-coffee-table-ghUf8UzTK8g',
+    },
     pinterestDescription: 'Bring a forest-inspired mood home with layered greens, warm wood, botanical patterns, and a few natural textures. This practical styling guide keeps the look balanced and livable.',
     headings: [
       { depth: 2, slug: 'what-forest-inspired-decor-means', text: 'What Forest-Inspired Decor Means' },
@@ -958,7 +965,8 @@ export const POSTS: BlogPost[] = [
       </ul>
       <p>Forest-inspired decor works best when it reflects the people who live there. Use the current trend as a starting point, then keep the colors, furniture, and textures that feel comfortable in your own home.</p>
     `
-  }
+  },
+  ...FEATURED_POSTS,
 ];
 
 // Keep the newest editorial dates first so the home page and blog lead with current posts.

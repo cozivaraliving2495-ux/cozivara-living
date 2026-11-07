@@ -33,6 +33,7 @@ const siteUrl = (Astro.site?.toString() || 'https://cozivaraliving.netlify.app')
 const pageCanonicalUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
 const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
+const bingSiteVerification = import.meta.env.PUBLIC_BING_SITE_VERIFICATION?.trim();
 const pinterestVerification = import.meta.env.PUBLIC_PINTEREST_VERIFICATION?.trim();
 const adsenseClientId = import.meta.env.PUBLIC_ADSENSE_CLIENT_ID?.trim() || '';
 const adsenseClientIdIsValid = /^ca-pub-\d{16}$/.test(adsenseClientId);
@@ -90,6 +91,7 @@ const organizationSchema = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={fullImageUrl} />
     {googleSiteVerification && <meta name="google-site-verification" content={googleSiteVerification} />}
+    {bingSiteVerification && <meta name="msvalidate.01" content={bingSiteVerification} />}
     {pinterestVerification && <meta name="p:domain_verify" content={pinterestVerification} />}
     {adsenseClientIdIsValid && <meta name="google-adsense-account" content={adsenseClientId} />}
 
