@@ -18,65 +18,72 @@ const LIFESTYLE = {
 export const FEATURED_POSTS: BlogPost[] = [
   {
     ...LIFESTYLE,
-    slug: 'forest-green-terracotta-sapphire-room-palette',
-    title: 'Forest Green, Terracotta & Sapphire: A Room Color Guide',
-    excerpt: 'Build a confident, livable room palette with forest green, burnt terracotta, sapphire, and a calm neutral base. Includes proportions, sample colors, and easy renter-friendly accents.',
+    slug: 'sage-green-cream-beige-living-room-color-ideas',
+    title: 'Sage Green and Cream Living Room Ideas: A Warm 5-Color Palette',
+    excerpt: 'Bring together sage green, cream beige, warm brown, soft grey, and terracotta for a calm living room. This practical guide shows where to use each shade, how to layer textures, and how to test the palette at home.',
     publishDate: 'Nov 8, 2026',
     readTime: '7 min read',
-    featuredImage: '/images/articles/forest-green-terracotta-sapphire.webp',
-    pinImage: '/images/pinterest/forest-green-terracotta-sapphire-pin.jpg',
-    imageAlt: 'A forest-green chair, leafy plants, and bold terracotta and blue wall colors in a modern living room.',
+    featuredImage: 'https://images.pexels.com/photos/38899471/pexels-photo-38899471.jpeg?auto=compress&cs=tinysrgb&w=1400',
+    pinImage: '/images/pinterest/sage-green-cream-beige-room-palette-pin.jpg',
+    imageAlt: 'A bright living room with a cream-beige sofa and leafy green plant, a calm starting point for sage, warm brown, soft grey, and terracotta accents.',
     imageCredit: {
-      name: 'Fujiphilm',
-      photoUrl: 'https://unsplash.com/photos/colorful-living-room-with-geometric-wall-design-and-plants-IGTzLb0QMvA/',
+      name: 'IRINA',
+      photoUrl: 'https://www.pexels.com/photo/elegant-modern-living-room-with-beige-sofa-38899471/',
     },
-    pinterestDescription: 'Try a room palette of forest green, burnt terracotta, sapphire blue, and warm ivory. See how to balance bold color with wood, textiles, and light in this practical living-room guide.',
+    pinterestDescription: 'Save this sage green and cream living-room palette: pair soft sage walls with a cream-beige sofa, warm brown wood, soft grey textiles, and small terracotta accents. Get practical room ideas and easy ways to test the colors before decorating.',
     headings: [
-      { depth: 2, slug: 'start-with-a-warm-neutral-base', text: 'Start With a Warm Neutral Base' },
-      { depth: 2, slug: 'choose-one-dominant-deep-color', text: 'Choose One Dominant Deep Color' },
-      { depth: 2, slug: 'bring-in-terracotta-for-warmth', text: 'Bring In Terracotta for Warmth' },
-      { depth: 2, slug: 'use-sapphire-and-plum-as-small-accents', text: 'Use Sapphire and Plum as Small Accents' },
-      { depth: 2, slug: 'balance-color-with-material-and-light', text: 'Balance Color With Materials and Light' },
-      { depth: 2, slug: 'test-the-palette-before-you-commit', text: 'Test the Palette Before You Commit' },
-      { depth: 2, slug: 'a-simple-color-shopping-checklist', text: 'A Simple Color Shopping Checklist' },
+      { depth: 2, slug: 'why-sage-and-cream-work-together', text: 'Why Sage and Cream Work Together' },
+      { depth: 2, slug: 'give-each-of-the-five-colors-a-role', text: 'Give Each of the Five Colors a Role' },
+      { depth: 2, slug: 'three-ways-to-use-the-palette', text: 'Three Ways to Use the Palette' },
+      { depth: 2, slug: 'add-texture-without-making-the-room-busy', text: 'Add Texture Without Making the Room Busy' },
+      { depth: 2, slug: 'adapt-the-colors-to-your-room-and-light', text: 'Adapt the Colors to Your Room and Light' },
+      { depth: 2, slug: 'test-the-palette-before-you-buy', text: 'Test the Palette Before You Buy' },
+      { depth: 2, slug: 'a-five-color-room-planning-checklist', text: 'A Five-Color Room Planning Checklist' },
     ],
     contentHtml: `
-      <p>Deep colors can make a living room feel personal and layered, but several saturated shades need a little structure. A useful starting point is to choose one main color, one warm supporting color, and one smaller accent, then give them room to breathe with a light neutral. This guide adapts a jewel-and-earth palette of forest green, terracotta, sapphire, plum, charcoal, and warm ivory for everyday homes.</p>
-      <p>There is good reason to look beyond cool gray. A 2026 survey of interior design professionals by <a href="https://www.fixr.com/articles/interior-design-color-trends" target="_blank" rel="noopener noreferrer">Fixr's Interior Design Color Trends report</a> found restorative greens, nature-inspired neutrals, and deep browns among the colors designers expect to see. Treat that survey as a snapshot of professional opinion, not a guarantee that a particular color will suit every home.</p>
+      <p>The reference palette pairs sage green with cream beige, warm brown, soft grey, and terracotta. Together they can make a living room feel calm and sun-warmed without relying on one flat neutral. The trick is to give each color a job: let the light neutrals carry the room, use sage as the main color, and repeat the two warmer accents in smaller, intentional touches.</p>
+      <p>Think of the color values below as screen references, not exact paint formulas. Paint, fabric, wood, and daylight all shift how a color looks. Use real samples beside your sofa and floor before making a permanent change.</p>
 
-      <h2 id="start-with-a-warm-neutral-base">Start With a Warm Neutral Base</h2>
-      <p>Try warm ivory (<code>#F3EEE5</code>) on the largest surfaces: walls, ceiling, or a large rug. It softens the contrast between dark upholstery and warm accents, and it gives art and wood finishes a calmer backdrop. If you already have white walls, oak floors, or a beige sofa, those can serve as the neutral; there is no need to repaint simply to follow a palette.</p>
-      <p>In a small or north-facing room, keep more of the wall area light and add deep color through a sofa, curtains, cushions, or a single painted feature. A dark room can still be beautiful, but test how the color reads in the actual light before painting every wall.</p>
+      <h2 id="why-sage-and-cream-work-together">Why Sage and Cream Work Together</h2>
+      <p>Sage is a softened green that can sit comfortably beside natural wood, plants, and warm white. Cream beige keeps the room bright and makes the green feel gentle rather than stark. Warm brown adds visual weight through furniture and wood finishes, while soft grey gives you a quieter option for rugs, curtains, or upholstery. Terracotta adds a small, earthy spark that stops the palette from feeling too cool or uniform.</p>
+      <p>These shades are flexible, but their undertones matter. A sage with a strong blue cast may feel cooler next to a yellow cream; a very orange terracotta can overpower a muted green. Compare samples together in the actual room, and choose versions that share a similar level of softness.</p>
 
-      <h2 id="choose-one-dominant-deep-color">Choose One Dominant Deep Color</h2>
-      <p>Forest green (<code>#174A3C</code>) works well as an anchor because it relates naturally to plants, wood, and garden views. Use it on one substantial element, such as an upholstered sofa, a pair of curtains, a bookcase, or one feature wall. If green is not your favorite, let plum (<code>#71364A</code>) or midnight sapphire (<code>#203B64</code>) take that role instead.</p>
-      <p>Pick one of those deep shades to lead. Putting green, plum, sapphire, charcoal, and terracotta on equally large surfaces can make the room feel busy and darker than expected. If you want several of them, reserve the others for smaller details.</p>
-
-      <h2 id="bring-in-terracotta-for-warmth">Bring In Terracotta for Warmth</h2>
-      <p>Burnt terracotta (<code>#C45E3D</code>) adds an earthy counterpoint to green and blue. Bring it in with a cushion, a ceramic lamp, a throw, an artwork detail, or a small side table. Repeating the shade in two places usually feels more intentional than scattering many unrelated warm colors around the room.</p>
-      <p>For a stronger look, use terracotta on a wall or a larger textile and let the other colors stay quieter. For a softer look, choose a muted clay or rust instead of a bright orange-red. Paint names vary by maker, so use the hex values here only as screen references; compare real paint cards and fabric samples in your home.</p>
-
-      <h2 id="use-sapphire-and-plum-as-small-accents">Use Sapphire and Plum as Small Accents</h2>
-      <p>Sapphire, plum, and charcoal can add depth without taking over. Try one in a patterned cushion, a framed print, a lampshade, or a small painted cabinet. Charcoal (<code>#2B2C2E</code>) is useful for a narrow line of contrast in a frame, table leg, or hardware; it need not become another dominant surface.</p>
-      <p>A practical proportion to test is roughly 60% warm neutral, 30% of one main color, and 10% supporting accents. It is a planning guide rather than a rule. If the room looks too colorful, reduce the accent area first; if it feels flat, add texture before introducing a fourth strong shade.</p>
-
-      <h2 id="balance-color-with-material-and-light">Balance Color With Materials and Light</h2>
-      <p>Color is only one part of the room. Pair deep green with warm wood, terracotta with linen or matte pottery, and sapphire with a natural fiber rug or pale oak. A mix of smooth, soft, and woven surfaces keeps the scheme from looking like a row of paint chips.</p>
-      <p>Notice the light in the room at different times of day. A color that looks calm in morning daylight can appear much warmer or darker under an evening bulb. Use lamps where people read or gather, and check that any dimmer and bulb are compatible with the fixture.</p>
-
-      <h2 id="test-the-palette-before-you-commit">Test the Palette Before You Commit</h2>
-      <p>Make a small board from paint cards, fabric swatches, a wood sample, and one photo of your existing floor or sofa. View it beside the room's fixed finishes. If painting, sample a generous patch on more than one wall and look at it in daylight and at night. For removable accents, try a pillow or throw before buying a full set.</p>
-      <p>Renters can get the same feeling with art, freestanding furniture, textiles, and lamps. Check the lease before using peel-and-stick products or changing wall finishes, and test removable materials on an inconspicuous area according to the maker's instructions.</p>
-
-      <h2 id="a-simple-color-shopping-checklist">A Simple Color Shopping Checklist</h2>
+      <h2 id="give-each-of-the-five-colors-a-role">Give Each of the Five Colors a Role</h2>
       <ul>
-        <li>Keep the largest surfaces warm and neutral unless the room has enough light for a deeper scheme.</li>
-        <li>Choose one dominant shade: forest green, plum, or sapphire.</li>
-        <li>Add terracotta through one or two repeatable accents.</li>
-        <li>Use charcoal and the remaining jewel tones in small details.</li>
-        <li>Compare real samples beside the floor, upholstery, and window light before buying.</li>
+        <li><strong>Sage green — <code>#6B7652</code>:</strong> use it on one feature wall, a sofa, cushions, or a throw. If the room is small or dim, keep sage to movable accents or one wall.</li>
+        <li><strong>Cream beige — <code>#EFD7B6</code>:</strong> make this the broad, light foundation with upholstery, curtains, a rug, or existing wall color.</li>
+        <li><strong>Warm brown — <code>#A66D42</code>:</strong> bring it in with wood furniture, a frame, a woven basket, or a leather detail. Existing wood floors may already provide enough.</li>
+        <li><strong>Soft grey — <code>#B9B6B2</code>:</strong> use a little in a cushion, rug pattern, or lampshade to connect cooler finishes without introducing a strong contrast.</li>
+        <li><strong>Terracotta — <code>#C8794B</code>:</strong> reserve it for a pot, ceramic object, artwork, or one or two cushions. Small repeats feel warm without competing with the green.</li>
       </ul>
-      <p>The strongest palette is the one that works with the things you already own and the way you use the room. Start with one bold piece, repeat its color thoughtfully, and let the rest of the space support it.</p>
+      <p>A useful first mock-up is about 60% cream beige, 25% sage, 10% warm brown, and 5% terracotta. Treat soft grey as a supporting neutral that can replace or share part of the cream area, rather than a fixed extra slice. These proportions are a starting point, not a design rule; the floor, existing furniture, and natural light may already supply some of the colors.</p>
+
+      <h2 id="three-ways-to-use-the-palette">Three Ways to Use the Palette</h2>
+      <p><strong>For an airy room:</strong> keep the walls and largest upholstery cream beige. Use sage in a pair of cushions and a plant pot, warm brown in the coffee table, and a small terracotta object on a shelf. Add soft grey through a subtle rug pattern if the room needs a cooler note.</p>
+      <p><strong>For a cozier room:</strong> put sage on one wall or in a substantial upholstered piece, then balance it with light curtains and a pale rug. Let a warm-brown side table or wood frame repeat the room’s existing timber, and add terracotta in just one spot near eye level.</p>
+      <p><strong>For a renter-friendly refresh:</strong> leave the walls as they are and start with a sage throw, cream cushion covers, a brown wood tray, a grey rug, and a terracotta planter. These pieces can move with you, and you can change the balance without painting.</p>
+
+      <h2 id="add-texture-without-making-the-room-busy">Add Texture Without Making the Room Busy</h2>
+      <p>Let material create variety when the colors are close in value. Combine a smooth wall with linen or cotton, a woven rug, matte pottery, and visible wood grain. The surfaces catch light differently, so the room feels layered even when the palette stays restrained.</p>
+      <p>Repeat each accent at least once if it appears isolated: a terracotta cushion can relate to a small ceramic piece, and a soft-grey rug thread can echo a grey lampshade. Avoid buying a matching set of every color. A few repeated details look more natural than placing all five shades in equal amounts.</p>
+
+      <h2 id="adapt-the-colors-to-your-room-and-light">Adapt the Colors to Your Room and Light</h2>
+      <p>In a north-facing or shaded room, use more cream beige and lighter wood so the green does not make the space feel darker. In a bright room, a deeper sage wall or sofa can feel balanced, while sheer curtains help soften direct light. Soft grey can cool a sunny room, but too much may make a low-light space feel flat.</p>
+      <p>Check how the palette looks in the morning and under your evening lamps. Warm bulbs can make cream and terracotta appear more golden; cooler daylight may make sage and grey look bluer. If a wall color changes more than you like, keep it to a smaller area and use textiles for the remaining accents.</p>
+
+      <h2 id="test-the-palette-before-you-buy">Test the Palette Before You Buy</h2>
+      <p>Gather paint cards, fabric swatches, and a wood sample—or borrow similar items from your home. Put them beside the floor, sofa, curtains, and trim, then view them from across the room. If you are considering paint, test a sample on more than one wall and observe it at different times of day. Follow the paint maker’s preparation instructions and check your lease before changing a rental.</p>
+      <p>For furniture and textiles, check dimensions and cleaning directions as well as color. A beautiful cushion or rug still needs to work with the way your household uses the room. Make one change at a time so you can see which part of the palette is doing the most for the space.</p>
+
+      <h2 id="a-five-color-room-planning-checklist">A Five-Color Room Planning Checklist</h2>
+      <ul>
+        <li>Choose which existing pieces already count as cream beige or warm brown.</li>
+        <li>Pick one main sage element and keep other large surfaces lighter.</li>
+        <li>Use terracotta sparingly and repeat it once for a connected look.</li>
+        <li>Add soft grey only where the room needs a cooler supporting neutral.</li>
+        <li>Compare real samples in daylight and lamplight before buying or painting.</li>
+      </ul>
+      <p>Sage, cream, warm brown, soft grey, and terracotta work best when the room still feels like yours. Start with the pieces you own, add one color at a time, and keep the combination that makes the space comfortable in both daylight and daily use.</p>
     `,
   },
   {

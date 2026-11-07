@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1500" viewBox="0 0 1000 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Sage green and warm neutral living room palette</title>
+  <desc id="desc">A calm illustrated living room with a cream sofa, sage accents, warm wood, a soft grey throw, terracotta cushions, and five labeled color swatches.</desc>
+  <defs>
+    <linearGradient id="wall" x2="0" y2="1"><stop stop-color="#dfe3d3"/><stop offset="1" stop-color="#c9d0b7"/></linearGradient>
+    <linearGradient id="floor" x2="0" y2="1"><stop stop-color="#d7b48f"/><stop offset="1" stop-color="#b48258"/></linearGradient>
+    <linearGradient id="sofa" x2="0" y2="1"><stop stop-color="#fff6e8"/><stop offset="1" stop-color="#e7d1b4"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur in="SourceAlpha" stdDeviation="12"/><feOffset dy="12"/><feComponentTransfer><feFuncA type="linear" slope=".16"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="rug" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M0 21h42M21 0v42" stroke="#b5845e" stroke-opacity=".18" stroke-width="2"/></pattern>
+  </defs>
+  <rect width="1000" height="1500" fill="#fbf7f0"/>
+  <text x="500" y="74" text-anchor="middle" fill="#64704f" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4">COZIVARA LIVING  /  COLOR NOTES</text>
+  <text x="500" y="150" text-anchor="middle" fill="#34402f" font-family="Georgia, serif" font-size="55" font-weight="700">A Calm, Cozy Palette</text>
+  <text x="500" y="202" text-anchor="middle" fill="#6e6a5e" font-family="Arial, sans-serif" font-size="25">Sage green, cream &amp; warm earthy accents</text>
+
+  <g>
+    <rect x="54" y="245" width="892" height="820" rx="30" fill="url(#wall)"/>
+    <rect x="54" y="898" width="892" height="167" rx="0" fill="url(#floor)"/>
+    <path d="M54 902h892" stroke="#a77752" stroke-width="9" opacity=".45"/>
+    <rect x="54" y="245" width="892" height="820" rx="30" fill="none" stroke="#e9dfd0" stroke-width="3"/>
+
+    <!-- window and soft beige curtains -->
+    <rect x="93" y="310" width="205" height="442" rx="9" fill="#b6c9bf" stroke="#f2e4d1" stroke-width="22"/>
+    <path d="M194 320v424M104 530h184" stroke="#f6eadb" stroke-width="11"/>
+    <rect x="78" y="293" width="30" height="500" rx="12" fill="#d8bd9c"/>
+    <rect x="286" y="293" width="30" height="500" rx="12" fill="#d8bd9c"/>
+    <path d="M81 322q27 15 27 43v375q-8 24-30 34M290 322q26 16 26 43v375q-8 24-30 34" fill="none" stroke="#c8ad8e" stroke-width="13" opacity=".65"/>
+    <circle cx="145" cy="410" r="36" fill="#fff4d8" opacity=".54"/>
+    <path d="M130 410h30M145 395v30" stroke="#fff8e6" stroke-width="6" opacity=".8"/>
+
+    <!-- framed botanical art -->
+    <rect x="380" y="300" width="190" height="230" rx="5" fill="#f7eee0" stroke="#a96d43" stroke-width="12"/>
+    <rect x="396" y="316" width="158" height="198" fill="#f3e7d5"/>
+    <path d="M475 487V355m0 59q-43-11-47-48 38 4 47 48zm0 34q45-11 48-48-39 4-48 48zm0-84q-30-10-33-39 27 4 33 39zm0 35q31-8 35-38-29 5-35 38" fill="none" stroke="#687653" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="591" y="350" width="141" height="177" rx="5" fill="#f8f0e4" stroke="#a96d43" stroke-width="11"/>
+    <rect x="606" y="365" width="111" height="147" fill="#eee3d4"/>
+    <path d="M661 487V389m0 47q-27-8-30-31 26 3 30 31zm0 27q29-8 32-31-26 3-32 31z" fill="none" stroke="#687653" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- plant -->
+    <path d="M836 706V485m0 119q-80-8-80-85 72 4 80 85zm0-50q76-16 71-90-69 14-71 90zm0-71q-62-14-55-77 55 12 55 77zm0-42q53-20 40-71-46 16-40 71z" fill="#71805a"/>
+    <path d="M836 701V489" stroke="#536342" stroke-width="9"/>
+    <path d="M789 704h96l-15 100h-66z" fill="#bb7650"/>
+    <ellipse cx="837" cy="704" rx="50" ry="13" fill="#d08a60"/>
+    <path d="M804 750h65" stroke="#d69b77" stroke-width="6" opacity=".8"/>
+
+    <!-- side table and lamp -->
+    <rect x="711" y="699" width="113" height="21" rx="7" fill="#9e6840"/>
+    <path d="M731 720v113m73-113v113" stroke="#875634" stroke-width="13"/>
+    <path d="M742 687q5-72 41-72t43 72z" fill="#f3dfc0"/>
+    <path d="M783 615v-54" stroke="#916a47" stroke-width="10"/>
+    <ellipse cx="783" cy="735" rx="15" ry="23" fill="#c8794b"/>
+
+    <!-- rug -->
+    <rect x="220" y="831" width="570" height="183" rx="75" fill="#ead7bf"/>
+    <rect x="242" y="849" width="526" height="148" rx="62" fill="url(#rug)"/>
+
+    <!-- sofa shadow, frame and cushions -->
+    <g filter="url(#shadow)">
+      <rect x="264" y="634" width="502" height="239" rx="54" fill="url(#sofa)"/>
+      <rect x="285" y="603" width="460" height="154" rx="50" fill="#f5ead9"/>
+      <rect x="305" y="738" width="421" height="143" rx="44" fill="url(#sofa)"/>
+      <path d="M493 752v103" stroke="#d3b89a" stroke-width="4" opacity=".6"/>
+      <rect x="291" y="845" width="26" height="58" rx="7" fill="#8b5c3c"/>
+      <rect x="709" y="845" width="26" height="58" rx="7" fill="#8b5c3c"/>
+      <!-- sage cushion -->
+      <path d="M335 668q20-30 54-24l66 13q20 5 17 29l-12 69q-4 21-26 17l-69-16q-26-6-26-30z" fill="#73805a"/>
+      <path d="M345 680q57 37 106 54" fill="none" stroke="#8b9870" stroke-width="5" opacity=".7"/>
+      <!-- terracotta cushion -->
+      <path d="M577 658q18-27 46-20l64 17q22 6 17 29l-15 64q-5 20-25 14l-65-19q-24-7-22-29z" fill="#c8794b"/>
+      <path d="M589 671q47 36 97 51" fill="none" stroke="#d8946d" stroke-width="5" opacity=".7"/>
+      <!-- grey throw -->
+      <path d="M637 748q34-21 66 7l12 99q-31 24-67 4z" fill="#b9b6b2"/>
+      <path d="M646 767l8 84m12-89 8 90m13-88 8 82" stroke="#d3d0cc" stroke-width="5" opacity=".75"/>
+    </g>
+
+    <!-- coffee table -->
+    <ellipse cx="505" cy="911" rx="151" ry="42" fill="#a66d42"/>
+    <path d="M391 921l-23 86m246-86 22 86" stroke="#855632" stroke-width="13" stroke-linecap="round"/>
+    <ellipse cx="505" cy="903" rx="151" ry="33" fill="#bc8251"/>
+    <path d="M392 902q112 24 225 0" fill="none" stroke="#d19b6d" stroke-width="5" opacity=".6"/>
+    <path d="M466 881q9-31 37-29 22 3 28 29z" fill="#f3e5d0"/>
+    <path d="M486 852v-25m0 15q-24-3-27-22 21 2 27 22zm0-7q20-3 23-21-19 2-23 21z" fill="none" stroke="#6d7a53" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <text x="500" y="1111" text-anchor="middle" fill="#35412f" font-family="Georgia, serif" font-size="32" font-weight="700">Five shades. One easy, layered room.</text>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="57" y="1155" width="164" height="108" rx="18" fill="#6B7652"/><text x="139" y="1294" fill="#35412f" font-size="20" font-weight="700">SAGE GREEN</text>
+    <rect x="245" y="1155" width="164" height="108" rx="18" fill="#EFD7B6" stroke="#d9c3a5" stroke-width="2"/><text x="327" y="1294" fill="#35412f" font-size="20" font-weight="700">CREAM BEIGE</text>
+    <rect x="433" y="1155" width="164" height="108" rx="18" fill="#A66D42"/><text x="515" y="1294" fill="#35412f" font-size="20" font-weight="700">WARM BROWN</text>
+    <rect x="621" y="1155" width="164" height="108" rx="18" fill="#B9B6B2"/><text x="703" y="1294" fill="#35412f" font-size="20" font-weight="700">SOFT GREY</text>
+    <rect x="809" y="1155" width="134" height="108" rx="18" fill="#C8794B"/><text x="876" y="1294" fill="#35412f" font-size="19" font-weight="700">TERRACOTTA</text>
+  </g>
+  <rect x="60" y="1342" width="880" height="94" rx="26" fill="#e8ecdf"/>
+  <text x="500" y="1383" text-anchor="middle" fill="#45513b" font-family="Arial, sans-serif" font-size="22" font-weight="700">See the full room-by-room guide</text>
+  <text x="500" y="1414" text-anchor="middle" fill="#68715b" font-family="Arial, sans-serif" font-size="17">cozivaraliving.netlify.app</text>
+  <text x="500" y="1474" text-anchor="middle" fill="#8a8378" font-family="Arial, sans-serif" font-size="16" letter-spacing="2">SAVE THIS PALETTE FOR YOUR NEXT ROOM REFRESH</text>
+</svg>
