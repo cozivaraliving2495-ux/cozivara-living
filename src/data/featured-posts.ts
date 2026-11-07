@@ -24,7 +24,7 @@ export const FEATURED_POSTS: BlogPost[] = [
     publishDate: 'Nov 8, 2026',
     readTime: '7 min read',
     featuredImage: 'https://images.pexels.com/photos/38899471/pexels-photo-38899471.jpeg?auto=compress&cs=tinysrgb&w=1400',
-    pinImage: '/images/pinterest/sage-green-cream-beige-room-palette-pin.jpg',
+    pinImage: 'https://images.pexels.com/photos/38899471/pexels-photo-38899471.jpeg?auto=compress&cs=tinysrgb&w=1400',
     imageAlt: 'A bright living room with a cream-beige sofa and leafy green plant, a calm starting point for sage, warm brown, soft grey, and terracotta accents.',
     imageCredit: {
       name: 'IRINA',
@@ -43,6 +43,14 @@ export const FEATURED_POSTS: BlogPost[] = [
     contentHtml: `
       <p>The reference palette pairs sage green with cream beige, warm brown, soft grey, and terracotta. Together they can make a living room feel calm and sun-warmed without relying on one flat neutral. The trick is to give each color a job: let the light neutrals carry the room, use sage as the main color, and repeat the two warmer accents in smaller, intentional touches.</p>
       <p>Think of the color values below as screen references, not exact paint formulas. Paint, fabric, wood, and daylight all shift how a color looks. Use real samples beside your sofa and floor before making a permanent change.</p>
+
+      <div role="group" aria-label="Five-color living room palette" style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.5rem;margin:1.5rem 0;">
+        <div style="border-radius:.75rem;background:#6B7652;color:white;padding:.75rem .5rem;text-align:center;font-size:.8rem;"><strong>Sage Green</strong><br><code style="color:inherit;">#6B7652</code></div>
+        <div style="border-radius:.75rem;background:#EFD7B6;color:#332b22;padding:.75rem .5rem;text-align:center;font-size:.8rem;"><strong>Cream Beige</strong><br><code style="color:inherit;">#EFD7B6</code></div>
+        <div style="border-radius:.75rem;background:#A66D42;color:white;padding:.75rem .5rem;text-align:center;font-size:.8rem;"><strong>Warm Brown</strong><br><code style="color:inherit;">#A66D42</code></div>
+        <div style="border-radius:.75rem;background:#B9B6B2;color:#252422;padding:.75rem .5rem;text-align:center;font-size:.8rem;"><strong>Soft Grey</strong><br><code style="color:inherit;">#B9B6B2</code></div>
+        <div style="border-radius:.75rem;background:#C8794B;color:#24180f;padding:.75rem .5rem;text-align:center;font-size:.8rem;"><strong>Terracotta</strong><br><code style="color:inherit;">#C8794B</code></div>
+      </div>
 
       <h2 id="why-sage-and-cream-work-together">Why Sage and Cream Work Together</h2>
       <p>Sage is a softened green that can sit comfortably beside natural wood, plants, and warm white. Cream beige keeps the room bright and makes the green feel gentle rather than stark. Warm brown adds visual weight through furniture and wood finishes, while soft grey gives you a quieter option for rugs, curtains, or upholstery. Terracotta adds a small, earthy spark that stops the palette from feeling too cool or uniform.</p>
